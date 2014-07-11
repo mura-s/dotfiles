@@ -1,0 +1,10 @@
+# unbind
+bind generic - none
+bind generic g none
+bind generic G none
+
+# bind
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic - toggle-rev-graph
+bind generic ^g !?git gc

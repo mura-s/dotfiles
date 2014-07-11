@@ -1,0 +1,11 @@
+[core]
+	editor = vim
+[user]
+	name = muramatsu
+	email = seiya.etoo@gmail.com
+[color]
+	ui = auto
+[push]
+	default = simple
+[alias]
+	co = checkout
