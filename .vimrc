@@ -25,7 +25,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'vim-ruby/vim-ruby'
@@ -64,49 +64,60 @@ set noswapfile
 set autoindent
 set autoread
 set number
+set backspace=indent,eol,start
+
+" copy to vim-register & mac-clipboard
+set clipboard+=unnamedplus,unnamed
 
 set background=dark
 colorscheme solarized
 
 "--------------------
 " completion setting
-" neocomplcache
+" neocomplete
 let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_auto_completion_start_length = 2
-let g:neocomplcache_manual_completion_start_length = 2
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_max_list = 20
-"let g:neocomplcache_enable_auto_select = 1
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#auto_completion_start_length = 2
+let g:neocomplete#manual_completion_start_length = 2
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" avoid conflict with vim-rails
-let g:neocomplcache_force_overwrite_completefunc = 1
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+" inoremap <expr><C-g> neocomplete#undo_completion()
 
 " completion color
 hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
 hi PmenuSel ctermbg=39 ctermfg=0 guibg=#8cd0d3 guifg=#666666
 hi PmenuSbar guibg=#333333
 
+" avoid conflict with vim-rails
+let g:neocomplete_force_overwrite_completefunc = 1
+
 " ruby completion
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+let g:rubycomplete_rails = 0
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_include_object = 1
+let g:rubycomplete_include_object_space = 1
 
 " Enable heavy omni completion.
-" if !exists('g:neocomplcache_omni_patterns')
-  " let g:neocomplcache_force_omni_patterns = {}
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+  " let g:neocomplete#sources#omni#input_patterns = {}
 " endif
-" let g:neocomplcache_force_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-
-" set dictionary complete (<C-n> or <C-p>)
-"set complete+=k
+" let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "--------------------
 " key mapping
@@ -116,8 +127,6 @@ inoremap <C-o> <C-x><C-o>
 inoremap <C-u> <C-x><C-u>
 " tag completion
 inoremap <C-]> <C-x><C-]>
-" include completion (<C-n> or <C-p> : for c_lang & ruby(require)) 
-" inoremap <C-l> <C-x><C-i>
 
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
@@ -133,18 +142,16 @@ let g:rails_level=4
 " setting
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 200
+let g:unite_source_file_mru_limit = 100
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 " keymap
+nnoremap <silent> [unite]m :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]u :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
-" nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
@@ -238,7 +245,6 @@ nnoremap <silent><Leader>m :PrevimOpen<CR>
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
 au BufNewFile,BufRead *.java,*.c set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-"au BufNewFile,BufRead *.rb,*.erb set tabstop=2 shiftwidth=2 softtabstop=2 expandtab "dictionary=~/.vim/dict/ruby.dict
 
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
@@ -248,4 +254,3 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
-
