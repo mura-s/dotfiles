@@ -152,6 +152,8 @@ function! s:unite_my_settings()
   " quit unite with <ESC><ESC>
   nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+  " vsplit
+  inoremap <silent> <buffer> <expr><C-v> unite#do_action('vsplit')
 endfunction
 
 " vim-ref
