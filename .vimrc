@@ -117,7 +117,7 @@ let g:rubycomplete_include_object_space = 1
 " if !exists('g:neocomplete#sources#omni#input_patterns')
   " let g:neocomplete#sources#omni#input_patterns = {}
 " endif
-" let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
 "--------------------
 " key mapping
@@ -152,6 +152,7 @@ nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
@@ -159,6 +160,8 @@ function! s:unite_my_settings()
   " quit unite with <ESC><ESC>
   nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+  " up to parent directory
+  imap <buffer> <C-j>     <Plug>(unite_delete_backward_path)
   " vsplit
   inoremap <silent> <buffer> <expr><C-v> unite#do_action('vsplit')
 endfunction
@@ -209,8 +212,8 @@ let g:quickrun_config = {
 " quickrun rspec_test only cursol line
 let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': "-l %{line('.')}", 'exec': 'bundle exec %c %o %s %a' }
 augroup RSpec
-    autocmd!
-    autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
 " lightline.vim
