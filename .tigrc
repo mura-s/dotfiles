@@ -6,5 +6,5 @@ bind generic G none
 # bind
 bind generic g move-first-line
 bind generic G move-last-line
-bind generic - toggle-rev-graph
-bind generic ^g !?git gc
+bind generic - :toggle commit-title-graph
+bind generic <Ctrl-g> !?git gc

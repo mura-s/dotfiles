@@ -149,8 +149,8 @@ nmap    <Leader>f [unite]
 " keymap
 nnoremap <silent> [unite]m :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> [unite]f :<C-u>Unite file<CR>
+nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 
