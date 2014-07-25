@@ -33,6 +33,7 @@ NeoBundle 'tpope/vim-rails'
 
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kana/vim-surround'
@@ -167,6 +168,7 @@ function! s:unite_my_settings()
 endfunction
 
 " vim-ref
+" keymap: Shift-k
 let g:ref_use_vimproc=1
 let g:ref_refe_version=2
 let g:ref_refe_encoding = 'utf-8'
@@ -248,6 +250,8 @@ nnoremap <silent><Leader>m :PrevimOpen<CR>
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
 au BufNewFile,BufRead *.java,*.c set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
+au BufNewFile,BufRead *.coffee set filetype=coffee
 
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
