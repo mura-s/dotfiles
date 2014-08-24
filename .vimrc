@@ -1,13 +1,10 @@
-"--------------------
-" disable vi compatible
 set nocompatible
 
 "--------------------
-" NeoBundle setting
-filetype off	" required!
+" NeoBundle settings
+filetype off  " required!
 
-" for proxy environment
-"let g:neobundle_default_git_protocol='https'
+"let g:neobundle_default_git_protocol='https'  " for proxy environment
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -51,9 +48,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
-filetype on			" required!
-filetype plugin on    
-filetype indent on
+filetype plugin indent on  " required!
 
 "--------------------
 " default vim setting
@@ -66,7 +61,6 @@ set autoindent
 set autoread
 set number
 set backspace=indent,eol,start
-
 " copy to vim-register & mac-clipboard
 set clipboard+=unnamedplus,unnamed
 
@@ -95,7 +89,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-inoremap <expr><C-l> neocomplete#complete_common_string()
 " inoremap <expr><C-g> neocomplete#undo_completion()
 
 " completion color
@@ -114,30 +107,25 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_object_space = 1
 
-" Enable heavy omni completion.
-" if !exists('g:neocomplete#sources#omni#input_patterns')
-  " let g:neocomplete#sources#omni#input_patterns = {}
-" endif
-" let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-
 "--------------------
-" key mapping
+" key mappings
 " omni completion
 inoremap <C-o> <C-x><C-o>
+
 " user defined completion
 inoremap <C-u> <C-x><C-u>
-" tag completion
-inoremap <C-]> <C-x><C-]>
+
+" tag jump
+nnoremap <C-]> g<C-]>
 
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
 
 "--------------------
-" other plugin
+" other plugins
+
 " rails-vim
-let g:rails_level=4
-"let g:rails_syntax=1
-"let g:rails_default_file="app/controllers/application.rb"
+let g:rails_level=4  " enable rails-vim
 
 " unite.vim
 " setting
@@ -148,37 +136,35 @@ let g:unite_source_file_mru_limit = 100
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 " keymap
-nnoremap <silent> [unite]m :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
-  " quit unite with <ESC><ESC>
+  " quit unite.vim
   nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-  " up to parent directory
-  imap <buffer> <C-j>     <Plug>(unite_delete_backward_path)
+  " move to parent directory
+  imap <buffer> <C-h> <Plug>(unite_delete_backward_path)
   " vsplit
   inoremap <silent> <buffer> <expr><C-v> unite#do_action('vsplit')
 endfunction
 
-" vim-ref
-" keymap: Shift-k
+" vim-ref (keymap: Shift-k)
 let g:ref_use_vimproc=1
 let g:ref_refe_version=2
 let g:ref_refe_encoding = 'utf-8'
 
 " NERDTree
-" keymap
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeMapOpenSplit='s'
 let NERDTreeMapOpenVSplit='v'
-" print dotfiles (hidden dotfiles: Shift-I)
+" show dotfiles (hidden dotfiles: Shift-I)
 let NERDTreeShowHidden = 1
 
 " nerdcommenter
@@ -212,7 +198,7 @@ let g:quickrun_config = {
 \}
 
 " quickrun rspec_test only cursol line
-let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': "-l %{line('.')}", 'exec': 'bundle exec %c %o %s %a' }
+let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': ":%{line('.')} -cfd", 'exec': 'bundle exec %c %s%o %a' }
 augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
@@ -252,11 +238,12 @@ au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 au BufNewFile,BufRead *.java,*.c set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 au BufNewFile,BufRead *.coffee set filetype=coffee
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
 
-" move last edit position when opening file
+" move to last edit position when opening file
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
