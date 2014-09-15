@@ -61,6 +61,8 @@ set autoindent
 set autoread
 set number
 set backspace=indent,eol,start
+set splitbelow
+set splitright
 " copy to vim-register & mac-clipboard
 set clipboard+=unnamedplus,unnamed
 
@@ -107,6 +109,12 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_object_space = 1
 
+" enable heavy omni completion
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
 "--------------------
 " key mappings
 " omni completion
@@ -151,8 +159,9 @@ function! s:unite_my_settings()
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
   " move to parent directory
   imap <buffer> <C-h> <Plug>(unite_delete_backward_path)
-  " vsplit
-  inoremap <silent> <buffer> <expr><C-v> unite#do_action('vsplit')
+  " split
+  inoremap <silent> <buffer> <expr><C-j> unite#do_action('split')
+  inoremap <silent> <buffer> <expr><C-l> unite#do_action('vsplit')
 endfunction
 
 " vim-ref (keymap: Shift-k)
@@ -162,8 +171,8 @@ let g:ref_refe_encoding = 'utf-8'
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeMapOpenSplit='s'
-let NERDTreeMapOpenVSplit='v'
+let NERDTreeMapOpenSplit='<C-j>'
+let NERDTreeMapOpenVSplit='<C-l>'
 " show dotfiles (hidden dotfiles: Shift-I)
 let NERDTreeShowHidden = 1
 
@@ -191,7 +200,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 " quickrun
 let g:quickrun_config = {
 \  "_" : {
-\    "outputter/buffer/split" : "15sp",
+\    "outputter/buffer/split" : "20sp",
 \    "outputter/buffer/into" : 1,
 \    "runner" : "vimproc"
 \  }
