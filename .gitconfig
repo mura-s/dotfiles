@@ -11,3 +11,5 @@
 	co = checkout
 [ghq]
 	root = /Users/muramatsu/src
+[url "git@github.com:"]
+	pushinsteadof = https://github.com/

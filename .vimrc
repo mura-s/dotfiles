@@ -135,8 +135,8 @@ nnoremap <Esc><Esc> :noh<CR>
 "--------------------
 " other plugins
 
-" rails-vim
-let g:rails_level=4  " enable rails-vim
+" enable rails-vim
+let g:rails_level=4
 
 " unite.vim
 " setting
@@ -204,7 +204,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 " quickrun
 let g:quickrun_config = {
 \  "_" : {
-\    "outputter/buffer/split" : "20sp",
+\    "outputter/buffer/split" : "15sp",
 \    "outputter/buffer/into" : 1,
 \    "runner" : "vimproc"
 \  }
@@ -243,7 +243,9 @@ source $VIMRUNTIME/macros/matchit.vim
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
 
-" golang auto formatting
+"--------------------
+" golang
+" auto formatting
 au BufWritePre *.go Fmt
 
 " godef (use gd-key)
