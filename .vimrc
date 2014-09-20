@@ -20,6 +20,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -27,6 +28,8 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle 'dgryski/vim-godef'
 
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'pangloss/vim-javascript'
@@ -41,6 +44,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'taka84u9/vim-ref-ri'
 
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -91,7 +95,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-" inoremap <expr><C-g> neocomplete#undo_completion()
 
 " completion color
 hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
@@ -147,9 +150,10 @@ nmap    <Leader>f [unite]
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
+nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
@@ -193,7 +197,7 @@ let g:syntastic_auto_loc_list=2
 
 " syntastic for ruby & js
 let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby', 'javascript'] }
+            \ 'active_filetypes': ['ruby', 'javascript', 'go'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 
@@ -233,18 +237,26 @@ nnoremap <silent><Leader>i :IndentGuidesToggle<CR>
 let g:endwise_no_mappings = 1
 autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
 
-" matchit (default vim plugin)
-" move def-end, if-endif with % key
+" matchit (move def-end, if-endif with % key)
 source $VIMRUNTIME/macros/matchit.vim
 
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
 
+" golang auto formatting
+au BufWritePre *.go Fmt
+
+" godef (use gd-key)
+let g:godef_same_file_in_same_window = 1
+
+" use goimports instead of gofmt
+let g:gofmt_command = 'goimports'
+
 "--------------------
 " default tab width
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
-au BufNewFile,BufRead *.java,*.c set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
@@ -256,4 +268,10 @@ autocmd FileType * setlocal formatoptions-=ro
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
+augroup END
+
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
 augroup END

@@ -6,6 +6,9 @@ eval "$(rbenv init -)"
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# ghq PATH
+export PATH="$HOME/bin:$PATH"
+
 # hub alias
 eval "$(hub alias -s)"
 
@@ -29,6 +32,9 @@ export LANG=ja_JP.UTF-8
 
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
+
+# go
+export GOPATH=$HOME
 
 # docker
 export DOCKER_HOST=tcp://192.168.59.103:2375

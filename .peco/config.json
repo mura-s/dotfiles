@@ -1,0 +1,10 @@
+{
+  "Keymap": {
+    "C-@": "peco.ToggleSelectionAndSelectNext"
+  },
+  "Style": {
+    "Query": ["blue"],
+    "Matched": ["blue"],
+    "Selected": ["underline", "on_magenta", "white"]
+  }
+}

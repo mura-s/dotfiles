@@ -9,3 +9,5 @@
 	default = simple
 [alias]
 	co = checkout
+[ghq]
+	root = /Users/muramatsu/src

@@ -13,7 +13,7 @@ SAVEHIST=1000000
 
 # prompt
 # two line
-PROMPT="%F{blue}[%n@%m]%f%F{yellow} %~ 
+PROMPT="%F{blue}[%n@%m]%f%F{yellow} %~
 %f%# "
 
 # delimiter setting
@@ -29,7 +29,7 @@ autoload -Uz compinit
 compinit
 
 # color
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # highlight
 zstyle ':completion:*:default' menu select
@@ -57,9 +57,9 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 RPROMPT="%1(v|%F{magenta}%1v%f|)"
 
@@ -73,7 +73,7 @@ setopt no_beep
 
 # no flow control
 setopt no_flow_control
- 
+
 # no Ctrl-D logout
 setopt IGNOREEOF
 
@@ -82,28 +82,28 @@ setopt correct
 
 # regard as comment after '#'
 setopt interactive_comments
- 
+
 # cd and pushd
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
- 
+
 # history
 setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_save_nodups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
- 
-# complement as path_name after '=' 
+
+# complement as path_name after '='
 setopt magic_equal_subst
- 
+
 # completion sugest
 setopt auto_menu
 
 # use glob (high functional wildcard)
 setopt extended_glob
- 
+
 ####################
 # keybind
 # history search
@@ -111,7 +111,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
 ####################
-# cdr 
+# cdr
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
   add-zsh-hook chpwd chpwd_recent_dirs
@@ -153,49 +153,65 @@ linux*)
 	;;
 esac
 
-###################
-# percol
+####################
+# peco
 function exists { which $1 &> /dev/null }
 
-if exists percol; then
+if exists peco; then
   # select history
-  function percol_select_history() {
+  function peco-select-history() {
     local tac
-    exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-    BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-    CURSOR=$#BUFFER         # move cursor
-    zle -R -c               # refresh
+    if which tac > /dev/null; then
+      tac="tac"
+    else
+      tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+      eval $tac | \
+      peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
   }
-
-  zle -N percol_select_history
-  bindkey '^R' percol_select_history
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
 
   # cdr
-  function percol-cdr () {
-    local selected_dir=$(cdr -l | awk '{ print $2 }' | percol)
+  function peco-cdr () {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
     if [ -n "$selected_dir" ]; then
       BUFFER="cd ${selected_dir}"
       zle accept-line
     fi
     zle clear-screen
   }
-
-  zle -N percol-cdr
-  bindkey '^@' percol-cdr
+  zle -N peco-cdr
+  bindkey '^@' peco-cdr
 
   # git branch
-  function percol-git-recent-all-branches () {
+  function peco-git-recent-all-branches () {
     local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
       perl -pne 's{^refs/(heads/)?}{}' | \
-        percol --query "$LBUFFER")
+      peco --query "$LBUFFER")
     if [ -n "$selected_branch" ]; then
-        BUFFER="git checkout ${selected_branch}"
-        zle accept-line
+      BUFFER="git checkout ${selected_branch}"
+      zle accept-line
     fi
     zle clear-screen
   }
-  zle -N percol-git-recent-all-branches
-  bindkey '^g' percol-git-recent-all-branches
+  zle -N peco-git-recent-all-branches
+  bindkey '^g' peco-git-recent-all-branches
+
+  # ghq
+  function peco-ghq () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N peco-ghq
+  bindkey '^]' peco-ghq
 fi
 
 ####################
