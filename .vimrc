@@ -131,6 +131,10 @@ nnoremap <C-]> g<C-]>
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
 
+" move cursor in insert mode
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
 "--------------------
 " other plugins
 
