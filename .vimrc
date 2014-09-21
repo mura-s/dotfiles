@@ -39,7 +39,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/nerdcommenter'
 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
@@ -179,11 +178,6 @@ let NERDTreeMapOpenSplit='<C-j>'
 let NERDTreeMapOpenVSplit='<C-l>'
 " show dotfiles (hidden dotfiles: Shift-I)
 let NERDTreeShowHidden = 1
-
-" nerdcommenter
-let NERDSpaceDelims = 1
-nmap <Leader># <Plug>NERDCommenterToggle
-vmap <Leader># <Plug>NERDCommenterToggle
 
 " emmet
 let g:user_emmet_leader_key='<C-t>'   " type '<C-t><C-t>,' if using tmux
