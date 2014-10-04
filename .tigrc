@@ -1,10 +1,10 @@
 # unbind
-bind generic - none
 bind generic g none
-bind generic G none
+bind main G none
 
 # bind
+bind generic <Ctrl-g> !?git gc
 bind generic g move-first-line
 bind generic G move-last-line
-bind generic - :toggle commit-title-graph
-bind generic <Ctrl-g> !?git gc
+bind main G move-last-line
+bind main - :toggle commit-title-graph
