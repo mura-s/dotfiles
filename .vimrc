@@ -21,7 +21,6 @@ NeoBundle 'Shougo/vimproc', {
 \    },
 \ }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'scrooloose/nerdtree'
 
@@ -93,7 +92,6 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
@@ -147,7 +145,6 @@ let g:rails_level=4
 " setting
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 100
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
@@ -155,7 +152,6 @@ nmap    <Leader>f [unite]
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
@@ -274,6 +270,6 @@ augroup END
 
 augroup HighlightTrailingSpaces
   autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
   autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
 augroup END

@@ -127,7 +127,6 @@ fi
 # alias
 alias mv='mv -i'
 alias cp='cp -i'
-#alias rm='rm -i'
 
 alias grep='grep --color'
 
