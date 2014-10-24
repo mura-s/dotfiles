@@ -22,6 +22,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -79,8 +80,8 @@ colorscheme solarized
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#auto_completion_start_length = 2
-let g:neocomplete#manual_completion_start_length = 2
+let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#manual_completion_start_length = 3
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
@@ -117,6 +118,12 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
+" disable completion popup at input '<'
+call neocomplete#util#set_default_dictionary(
+        \'g:neocomplete#sources#omni#input_patterns',
+        \'html,xhtml,xml,markdown,mkd',
+        \'')
+
 "--------------------
 " key mappings
 " omni completion
@@ -145,6 +152,7 @@ let g:rails_level=4
 " setting
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 100
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
@@ -152,6 +160,7 @@ nmap    <Leader>f [unite]
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
