@@ -58,13 +58,13 @@ filetype plugin indent on  " required!
 "--------------------
 " default vim setting
 syntax enable
+set number
 set hlsearch
 set incsearch
 set ignorecase
 set noswapfile
 set autoindent
 set autoread
-set number
 set backspace=indent,eol,start
 set splitbelow
 set splitright
@@ -126,12 +126,6 @@ call neocomplete#util#set_default_dictionary(
 
 "--------------------
 " key mappings
-" omni completion
-inoremap <C-o> <C-x><C-o>
-
-" user defined completion
-inoremap <C-u> <C-x><C-u>
-
 " tag jump
 nnoremap <C-]> g<C-]>
 
@@ -265,7 +259,7 @@ au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
 au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
-au BufNewFile,BufRead *.coffee set filetype=coffee
+"au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " stop auto comment out

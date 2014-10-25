@@ -9,5 +9,5 @@ ln -s $GOPATH/src/github.com/mura-s/dotfiles/.peco ~/.peco
 ln -s $GOPATH/src/github.com/mura-s/dotfiles/.tigrc ~/.tigrc
 ln -s $GOPATH/src/github.com/mura-s/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s $GOPATH/src/github.com/mura-s/dotfiles/.vimrc ~/.vimrc
-ln -s $GOPATH/src/github.com/mura-s/dotfiles/.zprofile ~/.zprofile
+ln -s $GOPATH/src/github.com/mura-s/dotfiles/.zshenv ~/.zshenv
 ln -s $GOPATH/src/github.com/mura-s/dotfiles/.zshrc ~/.zshrc
