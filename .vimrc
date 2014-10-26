@@ -247,11 +247,14 @@ nnoremap <silent><Leader>m :PrevimOpen<CR>
 " auto formatting
 au BufWritePre *.go Fmt
 
-" godef (use gd-key)
-let g:godef_same_file_in_same_window = 1
-
 " use goimports instead of gofmt
 let g:gofmt_command = 'goimports'
+
+" godef (keymap: gd)
+let g:godef_same_file_in_same_window = 1
+
+" godoc (keymap: shift-k)
+autocmd FileType go nmap <silent>K :Godoc<CR>
 
 "--------------------
 " default tab width

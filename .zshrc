@@ -29,6 +29,11 @@ fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpa
 autoload -Uz compinit
 compinit -u
 
+# go completion
+if [ -f /usr/local/share/zsh/site-functions/_go ]; then
+  source /usr/local/share/zsh/site-functions/_go
+fi
+
 # color
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
