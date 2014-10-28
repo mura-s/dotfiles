@@ -38,8 +38,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'kana/vim-surround'
 NeoBundle 'kana/vim-smartinput'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'scrooloose/syntastic'
@@ -123,6 +123,9 @@ call neocomplete#util#set_default_dictionary(
         \'g:neocomplete#sources#omni#input_patterns',
         \'html,xhtml,xml,markdown,mkd',
         \'')
+
+" coffeescript completion
+let g:neocomplete#sources#omni#input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
 
 "--------------------
 " key mappings
@@ -262,7 +265,6 @@ au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
 au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
-"au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " stop auto comment out

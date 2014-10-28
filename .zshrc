@@ -34,6 +34,11 @@ if [ -f /usr/local/share/zsh/site-functions/_go ]; then
   source /usr/local/share/zsh/site-functions/_go
 fi
 
+# node completion
+if [ -f /usr/local/share/zsh/site-functions/_npm ]; then
+  source /usr/local/share/zsh/site-functions/_npm
+fi
+
 # color
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
