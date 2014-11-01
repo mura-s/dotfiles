@@ -4,8 +4,6 @@ set nocompatible
 " NeoBundle settings
 filetype off  " required!
 
-"let g:neobundle_default_git_protocol='https'  " for proxy environment
-
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
@@ -95,6 +93,7 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
+inoremap <expr><C-l> neocomplete#complete_common_string()
 
 " completion color
 hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
@@ -112,7 +111,7 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_object_space = 1
 
-" enable heavy omni completion
+" enable heavy omni completion (ruby)
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
@@ -141,7 +140,6 @@ inoremap <C-b> <Left>
 
 "--------------------
 " other plugins
-
 " enable rails-vim
 let g:rails_level=4
 
@@ -158,8 +156,9 @@ nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
-nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
+nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
 " overwrite settings
@@ -197,7 +196,7 @@ let g:user_emmet_settings = {
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
-" syntastic for ruby & js
+" syntastic for ruby & js & go
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby', 'javascript', 'go'] }
 let g:syntastic_ruby_checkers = ['rubocop']
@@ -280,4 +279,6 @@ augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
   autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
+  " except unite.vim
+  autocmd FileType unite match
 augroup END

@@ -1,0 +1,11 @@
+AsciiComments:
+  Enabled: false
+
+LineLength:
+  Max: 99
+
+StringLiterals:
+  Enabled: false
+
+MethodLength:
+  Max: 15
