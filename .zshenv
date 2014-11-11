@@ -12,7 +12,7 @@ export PATH="$HOME/bin:$PATH"
 # hub alias
 eval "$(hub alias -s)"
 
-#delete duplicated PATH for tmux
+# delete duplicated PATH for tmux
 typeset -U path
 
 # terminal color
@@ -27,7 +27,7 @@ export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 # editor
 export EDITOR=vi
 
-#LANG
+# LANG
 export LANG=ja_JP.UTF-8
 
 # java

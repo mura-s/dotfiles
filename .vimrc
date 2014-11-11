@@ -93,7 +93,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-inoremap <expr><C-l> neocomplete#complete_common_string()
 
 " completion color
 hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
