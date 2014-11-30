@@ -276,7 +276,7 @@ augroup END
 
 augroup HighlightTrailingSpaces
   autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkgray
   autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
   " except unite.vim
   autocmd FileType unite match
