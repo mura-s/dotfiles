@@ -137,6 +137,12 @@ nnoremap <Esc><Esc> :noh<CR>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+" move to the next visual line
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
 "--------------------
 " other plugins
 " enable rails-vim
