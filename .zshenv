@@ -31,7 +31,7 @@ export EDITOR=vi
 export LANG=ja_JP.UTF-8
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 
 # go
 export GOPATH=$HOME
