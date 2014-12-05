@@ -9,6 +9,9 @@
 	default = simple
 [alias]
 	co = checkout
+	ci = commit
+	st = status
+	br = branch
 [ghq]
 	root = /Users/muramatsu/src
 [url "git@github.com:"]
