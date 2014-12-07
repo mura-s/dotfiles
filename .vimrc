@@ -137,6 +137,9 @@ nnoremap <Esc><Esc> :noh<CR>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+" delete in insert mode
+inoremap <C-d> <Del>
+
 " move to the next visual line
 nnoremap j gj
 nnoremap k gk
@@ -192,7 +195,9 @@ let NERDTreeMapOpenVSplit='<C-l>'
 let NERDTreeShowHidden = 1
 
 " emmet
-let g:user_emmet_leader_key='<C-t>'   " type '<C-t><C-t>,' if using tmux
+" example:
+"   html:5 -> html5 template
+let g:user_emmet_leader_key='<C-t>' " type '<C-t><C-t>,' if using tmux
 let g:user_emmet_settings = {
 \   'lang' : 'ja'
 \ }

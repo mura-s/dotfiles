@@ -149,6 +149,7 @@ alias h='history -15'
 alias be='bundle exec'
 alias bi='bundle install --path vendor/bundle'
 alias bu='bundle update'
+alias bl='bundle list'
 
 case "${OSTYPE}" in
 darwin*)
