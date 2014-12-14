@@ -40,4 +40,5 @@ export GOPATH=$HOME
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 # postgres
-#export PGDATA=/usr/local/var/postgres
+export PGDATA=/usr/local/var/postgres
+export ARCHFLAGS="-arch x86_64"

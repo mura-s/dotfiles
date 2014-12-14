@@ -268,6 +268,9 @@ let g:godef_same_file_in_same_window = 1
 " godoc (keymap: shift-k)
 autocmd FileType go nmap <silent>K :Godoc<CR>
 
+" disable complete preview window
+set completeopt=menuone
+
 "--------------------
 " default tab width
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
