@@ -20,7 +20,6 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -155,7 +154,6 @@ let g:rails_level=4
 " setting
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 100
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
@@ -163,7 +161,6 @@ nmap    <Leader>f [unite]
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
@@ -290,7 +287,7 @@ augroup END
 
 augroup HighlightTrailingSpaces
   autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkgray
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=239 ctermbg=239
   autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
   " except unite.vim
   autocmd FileType unite match
