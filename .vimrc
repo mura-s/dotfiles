@@ -18,6 +18,7 @@ NeoBundle 'Shougo/vimproc', {
 \     'cygwin' : 'make -f make_cygwin.mak',
 \    },
 \ }
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'scrooloose/nerdtree'
@@ -27,12 +28,12 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kana/vim-smartinput'
@@ -124,6 +125,23 @@ call neocomplete#util#set_default_dictionary(
 " coffeescript completion
 let g:neocomplete#sources#omni#input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
 
+" popup menu height
+set pumheight=15
+
+"--------------------
+" golang
+" use goimports instead of gofmt
+let g:go_fmt_command = 'goimports'
+
+" godef (keymap: gd)
+let g:godef_split=0
+
+" godoc (keymap: shift-k)
+autocmd FileType go nmap <silent>K :Godoc<CR>
+
+" disable complete preview window
+set completeopt=menuone
+
 "--------------------
 " key mappings
 " tag jump
@@ -203,7 +221,7 @@ let g:user_emmet_settings = {
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
-" syntastic for ruby & js & go
+" syntastic for ruby, js, go
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby', 'javascript', 'go'] }
 let g:syntastic_ruby_checkers = ['rubocop']
@@ -251,22 +269,8 @@ source $VIMRUNTIME/macros/matchit.vim
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
 
-"--------------------
-" golang
-" auto formatting
-au BufWritePre *.go Fmt
-
-" use goimports instead of gofmt
-let g:gofmt_command = 'goimports'
-
-" godef (keymap: gd)
-let g:godef_same_file_in_same_window = 1
-
-" godoc (keymap: shift-k)
-autocmd FileType go nmap <silent>K :Godoc<CR>
-
-" disable complete preview window
-set completeopt=menuone
+" vim-coffee-script
+nnoremap <silent><Leader>c :CoffeeCompile<CR>
 
 "--------------------
 " default tab width
