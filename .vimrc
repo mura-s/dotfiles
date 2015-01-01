@@ -233,7 +233,7 @@ let g:quickrun_config = {
 \    "outputter/buffer/split" : "15sp",
 \    "outputter/buffer/into" : 1,
 \    "runner" : "vimproc",
-\    "runner/vimproc/updatetime" : 500
+\    "runner/vimproc/updatetime" : 300
 \  }
 \}
 
