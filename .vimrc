@@ -39,6 +39,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'scrooloose/nerdcommenter'
 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
@@ -209,21 +210,28 @@ let NERDTreeMapOpenVSplit='<C-l>'
 " show dotfiles (hidden dotfiles: Shift-I)
 let NERDTreeShowHidden = 1
 
+" nerdcommenter
+let NERDSpaceDelims = 1
+nmap <Leader># <Plug>NERDCommenterToggle
+vmap <Leader># <Plug>NERDCommenterToggle
+
 " emmet
 " example:
 "   html:5 -> html5 template
 let g:user_emmet_leader_key='<C-t>' " type '<C-t><C-t>,' if using tmux
 let g:user_emmet_settings = {
-\   'lang' : 'ja'
-\ }
+\  'lang' : 'ja'
+\}
 
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 " syntastic for ruby, js, go
-let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby', 'javascript', 'go'] }
+let g:syntastic_mode_map = {
+\  'mode': 'passive',
+\  'active_filetypes': ['ruby', 'javascript', 'go']
+\}
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 
@@ -238,7 +246,9 @@ let g:quickrun_config = {
 \}
 
 " quickrun rspec_test only cursol line
-let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': ":%{line('.')} -cfd", 'exec': 'bundle exec %c %s%o %a' }
+let g:quickrun_config['ruby.rspec'] = {
+\  'command': 'rspec', 'cmdopt': ":%{line('.')} -cfd", 'exec': 'bundle exec %c %s%o %a'
+\}
 augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
