@@ -21,6 +21,7 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -145,9 +146,6 @@ set completeopt=menuone
 
 "--------------------
 " key mappings
-" tag jump
-nnoremap <C-]> g<C-]>
-
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
 
@@ -163,6 +161,9 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" ctags
+nnoremap <silent> <Leader>t :!ctags -R .<CR>
 
 "--------------------
 " other plugins
@@ -184,6 +185,12 @@ nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
+
+" unite-tag
+autocmd BufEnter *
+\   if empty(&buftype)
+\|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
+\|  endif
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
