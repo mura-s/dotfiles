@@ -237,10 +237,10 @@ let g:syntastic_auto_loc_list=2
 " syntastic for ruby, js, go
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
-\  'active_filetypes': ['ruby', 'javascript', 'go']
 \}
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
+nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun
 let g:quickrun_config = {
