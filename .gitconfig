@@ -13,6 +13,6 @@
 	st = status
 	br = branch
 [ghq]
-	root = /Users/muramatsu/src
+  root = ~/src
 [url "git@github.com:"]
 	pushinsteadof = https://github.com/
