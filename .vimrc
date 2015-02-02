@@ -274,7 +274,7 @@ let g:lightline = {
 " indentLine
 nnoremap <silent><Leader>i :IndentLinesToggle<CR>
 hi SpecialKey ctermfg=239 ctermbg=8
-set list listchars=tab:\¦\  " here is a space
+set list listchars=tab:\>\  " here is a space
 
 " vim-endwise (avoid conflict with vim-smartinput)
 let g:endwise_no_mappings = 1
