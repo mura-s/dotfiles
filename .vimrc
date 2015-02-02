@@ -36,7 +36,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
@@ -271,11 +271,10 @@ let g:lightline = {
 \  }
 \}
 
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesEven  ctermbg=black
-nnoremap <silent><Leader>i :IndentGuidesToggle<CR>
+" indentLine
+nnoremap <silent><Leader>i :IndentLinesToggle<CR>
+hi SpecialKey ctermfg=239 ctermbg=8
+set list listchars=tab:\¦\  " here is a space
 
 " vim-endwise (avoid conflict with vim-smartinput)
 let g:endwise_no_mappings = 1
