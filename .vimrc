@@ -5,7 +5,7 @@ set nocompatible
 filetype off  " required!
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
+  set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -120,9 +120,9 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 " disable completion popup at input '<'
 call neocomplete#util#set_default_dictionary(
-        \'g:neocomplete#sources#omni#input_patterns',
-        \'html,xhtml,xml,markdown,mkd',
-        \'')
+\ 'g:neocomplete#sources#omni#input_patterns',
+\ 'html,xhtml,xml,markdown,mkd',
+\ '')
 
 " coffeescript completion
 let g:neocomplete#sources#omni#input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
@@ -176,7 +176,7 @@ let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 " The prefix key.
 nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
+nmap	<Leader>f [unite]
 " keymap
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
@@ -188,9 +188,9 @@ nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
 " unite-tag
 autocmd BufEnter *
-\   if empty(&buftype)
-\|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
-\|  endif
+\  if empty(&buftype)
+\|   nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
+\| endif
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
@@ -273,8 +273,15 @@ let g:lightline = {
 
 " indentLine
 nnoremap <silent><Leader>i :IndentLinesToggle<CR>
-hi SpecialKey ctermfg=239 ctermbg=8
+augroup IndentLine
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *
+  \ if index(['help', 'nerdtree', 'quickrun'], &ft) < 0 | IndentLinesReset
+augroup END
+
+" visualize tab
 set list listchars=tab:\>\  " here is a space
+hi SpecialKey ctermfg=239 ctermbg=8
 
 " vim-endwise (avoid conflict with vim-smartinput)
 let g:endwise_no_mappings = 1
