@@ -243,6 +243,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun
+nnoremap <silent><Leader>q :QuickRun<CR>
 let g:quickrun_config = {
 \  "_" : {
 \    "outputter/buffer/split" : "15sp",
