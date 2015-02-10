@@ -274,6 +274,7 @@ let g:lightline = {
 
 " indentLine
 nnoremap <silent><Leader>i :IndentLinesToggle<CR>
+let g:indentLine_showFirstIndentLevel = 1
 augroup IndentLine
   autocmd!
   autocmd BufWinEnter,BufNewFile *
@@ -281,7 +282,7 @@ augroup IndentLine
 augroup END
 
 " visualize tab
-set list listchars=tab:\>\  " here is a space
+set list listchars=tab:\¦\  " here is a space
 hi SpecialKey ctermfg=239 ctermbg=8
 
 " vim-endwise (avoid conflict with vim-smartinput)
