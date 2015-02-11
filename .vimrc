@@ -56,7 +56,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 filetype plugin indent on  " required!
 
 "--------------------
-" default vim setting
+" basic settings
 syntax enable
 set number
 set hlsearch
@@ -75,7 +75,7 @@ set background=dark
 colorscheme solarized
 
 "--------------------
-" completion setting
+" completion settings
 " neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -171,7 +171,6 @@ nnoremap <silent> <Leader>t :!ctags -R .<CR>
 let g:rails_level=4
 
 " unite.vim
-" setting
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 " The prefix key.
@@ -186,7 +185,7 @@ nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
-" unite-tag
+" unite-tag (tag jump)
 autocmd BufEnter *
 \  if empty(&buftype)
 \|   nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
@@ -262,6 +261,19 @@ augroup RSpec
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
+" vim-endwise (avoid conflict with vim-smartinput)
+let g:endwise_no_mappings = 1
+autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
+
+" matchit (move def-end, if-endif with % key)
+source $VIMRUNTIME/macros/matchit.vim
+
+" PreVim (for markdown file)
+nnoremap <silent><Leader>m :PrevimOpen<CR>
+
+" vim-coffee-script
+nnoremap <silent><Leader>c :CoffeeCompile<CR>
+
 " lightline.vim
 set laststatus=2
 set t_Co=256
@@ -284,26 +296,15 @@ augroup END
 " visualize tab
 set list listchars=tab:\¦\  " here is a space
 hi SpecialKey ctermfg=239 ctermbg=8
+au BufNewFile,BufRead *.java,*.c,*.go nnoremap <silent><Leader>i :set list!<CR>
 
-" vim-endwise (avoid conflict with vim-smartinput)
-let g:endwise_no_mappings = 1
-autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
-
-" matchit (move def-end, if-endif with % key)
-source $VIMRUNTIME/macros/matchit.vim
-
-" PreVim (for markdown file)
-nnoremap <silent><Leader>m :PrevimOpen<CR>
-
-" vim-coffee-script
-nnoremap <silent><Leader>c :CoffeeCompile<CR>
-
-"--------------------
 " default tab width
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " custom tab width
 au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
+"--------------------
+" other settings
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " stop auto comment out
