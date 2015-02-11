@@ -291,17 +291,18 @@ augroup IndentLine
   autocmd!
   autocmd BufWinEnter,BufNewFile *
   \ if index(['help', 'nerdtree', 'quickrun'], &ft) < 0 | IndentLinesReset
+  " default tab width
+  au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
 " visualize tab
-set list listchars=tab:\¦\  " here is a space
 hi SpecialKey ctermfg=239 ctermbg=8
-au BufNewFile,BufRead *.java,*.c,*.go nnoremap <silent><Leader>i :set list!<CR>
-
-" default tab width
-au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-" custom tab width
-au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+augroup VisualizeTab
+  autocmd!
+  au BufNewFile,BufRead *.java,*.c,*.go set list listchars=tab:\¦\  " here is a space
+  au BufNewFile,BufRead *.java,*.c,*.go nnoremap <silent><Leader>i :set list!<CR>
+  au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+augroup END
 
 "--------------------
 " other settings
@@ -312,6 +313,7 @@ autocmd FileType * setlocal formatoptions-=ro
 
 " move to last edit position when opening file
 augroup vimrcEx
+  autocmd!
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
