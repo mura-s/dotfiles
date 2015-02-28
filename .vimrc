@@ -144,6 +144,8 @@ autocmd FileType go nmap <silent>K :Godoc<CR>
 " disable complete preview window
 set completeopt=menuone
 
+" default setting: nnoremap <C-l> :redraw!<CR>
+
 "--------------------
 " key mappings
 " clear search highlight
@@ -226,7 +228,9 @@ vmap <Leader># <Plug>NERDCommenterToggle
 "   html:5 -> html5 template
 let g:user_emmet_leader_key='<C-t>' " type '<C-t><C-t>,' if using tmux
 let g:user_emmet_settings = {
-\  'lang' : 'ja'
+\  'variables' : {
+\    'lang' : 'ja',
+\  },
 \}
 
 " syntastic
