@@ -16,3 +16,7 @@
   root = ~/src
 [url "git@github.com:"]
 	pushinsteadof = https://github.com/
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
