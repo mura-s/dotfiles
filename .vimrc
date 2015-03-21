@@ -27,14 +27,13 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'cheuk-fung/vim-ruby'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-smartinput'
@@ -222,16 +221,6 @@ let NERDTreeShowHidden = 1
 let NERDSpaceDelims = 1
 nmap <Leader># <Plug>NERDCommenterToggle
 vmap <Leader># <Plug>NERDCommenterToggle
-
-" emmet
-" example:
-"   html:5 -> html5 template
-let g:user_emmet_leader_key='<C-t>' " type '<C-t><C-t>,' if using tmux
-let g:user_emmet_settings = {
-\  'variables' : {
-\    'lang' : 'ja',
-\  },
-\}
 
 " syntastic
 let g:syntastic_enable_signs=1
