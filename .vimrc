@@ -34,6 +34,8 @@ NeoBundle 'dgryski/vim-godef'
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'clausreinke/typescript-tools'
 
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-smartinput'
@@ -74,6 +76,24 @@ set background=dark
 colorscheme solarized
 
 "--------------------
+" key mappings
+" clear search highlight
+nnoremap <Esc><Esc> :noh<CR>
+
+" move cursor in insert mode
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+" delete in insert mode
+inoremap <C-d> <Del>
+
+" move to the next visual line
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+"--------------------
 " completion settings
 " neocomplete
 let g:acp_enableAtStartup = 0
@@ -94,11 +114,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-
-" completion color
-hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
-hi PmenuSel ctermbg=39 ctermfg=0 guibg=#8cd0d3 guifg=#666666
-hi PmenuSbar guibg=#333333
 
 " avoid conflict with vim-rails
 let g:neocomplete_force_overwrite_completefunc = 1
@@ -123,8 +138,22 @@ call neocomplete#util#set_default_dictionary(
 \ 'html,xhtml,xml,markdown,mkd',
 \ '')
 
+" javascript completion
+let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
+
 " coffeescript completion
-let g:neocomplete#sources#omni#input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
+let g:neocomplete#force_omni_input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
+
+" typescript
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?'
+
+" start typescript-tools
+nnoremap <silent><Leader>t :TSSstarthere<CR>
+
+" completion color
+hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
+hi PmenuSel ctermbg=39 ctermfg=0 guibg=#8cd0d3 guifg=#666666
+hi PmenuSbar guibg=#333333
 
 " popup menu height
 set pumheight=15
@@ -144,27 +173,6 @@ autocmd FileType go nmap <silent>K :Godoc<CR>
 set completeopt=menuone
 
 " default setting: nnoremap <C-l> :redraw!<CR>
-
-"--------------------
-" key mappings
-" clear search highlight
-nnoremap <Esc><Esc> :noh<CR>
-
-" move cursor in insert mode
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-
-" delete in insert mode
-inoremap <C-d> <Del>
-
-" move to the next visual line
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" ctags
-nnoremap <silent> <Leader>t :!ctags -R .<CR>
 
 "--------------------
 " other plugins
@@ -226,12 +234,13 @@ vmap <Leader># <Plug>NERDCommenterToggle
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
-" syntastic for ruby, js, go
+" syntastic for ruby, js, ts, go
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_typescript_checkers = ['tsc']
 nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun
