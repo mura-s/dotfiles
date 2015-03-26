@@ -149,6 +149,7 @@ let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?'
 
 " start typescript-tools
 nnoremap <silent><Leader>t :TSSstarthere<CR>
+autocmd FileType typescript nnoremap <silent>gd :TSSdef<CR>
 
 " completion color
 hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
@@ -272,9 +273,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
-
-" vim-coffee-script
-nnoremap <silent><Leader>c :CoffeeCompile<CR>
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " lightline.vim
 set laststatus=2
@@ -308,8 +307,6 @@ augroup END
 
 "--------------------
 " other settings
-au BufNewFile,BufRead *.md set filetype=markdown
-
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
 
@@ -320,6 +317,7 @@ augroup vimrcEx
   \ exe "normal g`\"" | endif
 augroup END
 
+" trailing space
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=239 ctermbg=239
