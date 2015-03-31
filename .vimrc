@@ -116,7 +116,7 @@ inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
 " avoid conflict with vim-rails
-let g:neocomplete_force_overwrite_completefunc = 1
+let g:neocomplete#force_overwrite_completefunc = 1
 
 " ruby completion
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
