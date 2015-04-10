@@ -21,7 +21,6 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -69,8 +68,6 @@ set autoread
 set backspace=indent,eol,start
 set splitbelow
 set splitright
-" copy to vim-register & mac-clipboard
-set clipboard+=unnamedplus,unnamed
 
 set background=dark
 colorscheme solarized
@@ -138,13 +135,9 @@ call neocomplete#util#set_default_dictionary(
 \ 'html,xhtml,xml,markdown,mkd',
 \ '')
 
-" javascript completion
+" js, coffee, ts completion
 let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
-
-" coffeescript completion
 let g:neocomplete#force_omni_input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
-
-" typescript
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?'
 
 " start typescript-tools
@@ -190,16 +183,9 @@ nmap	<Leader>f [unite]
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
-
-" unite-tag (tag jump)
-autocmd BufEnter *
-\  if empty(&buftype)
-\|   nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
-\| endif
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
@@ -214,11 +200,6 @@ function! s:unite_my_settings()
   inoremap <silent> <buffer> <expr><C-l> unite#do_action('vsplit')
 endfunction
 
-" vim-ref (keymap: Shift-k)
-let g:ref_use_vimproc=1
-let g:ref_refe_version=2
-let g:ref_refe_encoding = 'utf-8'
-
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeMapOpenSplit='<C-j>'
@@ -231,18 +212,22 @@ let NERDSpaceDelims = 1
 nmap <Leader># <Plug>NERDCommenterToggle
 vmap <Leader># <Plug>NERDCommenterToggle
 
+" vim-ref (keymap: Shift-k)
+let g:ref_use_vimproc=1
+let g:ref_refe_version=2
+let g:ref_refe_encoding = 'utf-8'
+
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-
-" syntastic for ruby, js, ts, go
+nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
+" syntastic for ruby, js, ts, go
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_typescript_checkers = ['tsc']
-nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun
 nnoremap <silent><Leader>q :QuickRun<CR>
