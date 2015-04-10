@@ -45,7 +45,6 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'taka84u9/vim-ref-ri'
 
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -112,9 +111,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
-" avoid conflict with vim-rails
-let g:neocomplete#force_overwrite_completefunc = 1
-
 " ruby completion
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 let g:rubycomplete_rails = 0
@@ -123,17 +119,14 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_object_space = 1
 
+" enable rails-vim
+let g:rails_level=4
+
 " enable heavy omni completion (ruby)
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-
-" disable completion popup at input '<'
-call neocomplete#util#set_default_dictionary(
-\ 'g:neocomplete#sources#omni#input_patterns',
-\ 'html,xhtml,xml,markdown,mkd',
-\ '')
 
 " js, coffee, ts completion
 let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
@@ -170,9 +163,6 @@ set completeopt=menuone
 
 "--------------------
 " other plugins
-" enable rails-vim
-let g:rails_level=4
-
 " unite.vim
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
