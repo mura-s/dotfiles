@@ -34,7 +34,7 @@ NeoBundle 'dgryski/vim-godef'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'clausreinke/typescript-tools'
+NeoBundle 'clausreinke/typescript-tools.vim'
 
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-smartinput'
