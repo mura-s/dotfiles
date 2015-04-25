@@ -30,6 +30,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
+NeoBundle 'derekwyatt/vim-scala'
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
