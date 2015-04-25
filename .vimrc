@@ -50,7 +50,7 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tomasr/molokai'
 
 filetype plugin indent on  " required!
 
@@ -69,7 +69,8 @@ set splitbelow
 set splitright
 
 set background=dark
-colorscheme solarized
+let g:molokai_original = 1  " use monokai color
+colorscheme molokai
 
 "--------------------
 " key mappings
@@ -136,11 +137,6 @@ let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?'
 " start typescript-tools
 nnoremap <silent><Leader>t :TSSstarthere<CR>
 autocmd FileType typescript nnoremap <silent>gd :TSSdef<CR>
-
-" completion color
-hi Pmenu ctermfg=15 ctermbg=18 guibg=#666666
-hi PmenuSel ctermbg=39 ctermfg=0 guibg=#8cd0d3 guifg=#666666
-hi PmenuSbar guibg=#333333
 
 " popup menu height
 set pumheight=15
