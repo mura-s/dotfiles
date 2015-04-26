@@ -13,8 +13,8 @@ SAVEHIST=1000000
 
 # prompt
 # two line
-PROMPT="%F{blue}[%n@%m]%f%F{yellow} %~
-%f%# "
+PROMPT="%F{blue}[%n@%m]%f%F{white} %~
+%f> "
 
 # delimiter setting
 autoload -Uz select-word-style
@@ -67,7 +67,7 @@ precmd () {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-RPROMPT="%1(v|%F{magenta}%1v%f|)"
+RPROMPT="%1(v|%F{yellow}%1v%f|)"
 
 ####################
 # option
