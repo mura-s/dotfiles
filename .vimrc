@@ -31,13 +31,11 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'derekwyatt/vim-scala'
-
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools.vim'
 
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
@@ -257,28 +255,12 @@ let g:lightline = {
 \  }
 \}
 
-" indentLine
-nnoremap <silent><Leader>i :IndentLinesToggle<CR>
-let g:indentLine_showFirstIndentLevel = 1
-augroup IndentLine
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *
-  \ if index(['help', 'nerdtree', 'quickrun'], &ft) < 0 | IndentLinesReset
-  " default tab width
-  au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-augroup END
-
-" visualize tab
-hi SpecialKey ctermfg=239 ctermbg=8
-augroup VisualizeTab
-  autocmd!
-  au BufNewFile,BufRead *.java,*.c,*.go set list listchars=tab:\¦\  " here is a space
-  au BufNewFile,BufRead *.java,*.c,*.go nnoremap <silent><Leader>i :set list!<CR>
-  au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-augroup END
-
 "--------------------
 " other settings
+" indent
+au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
 
