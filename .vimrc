@@ -68,7 +68,7 @@ set splitbelow
 set splitright
 
 set background=dark
-let g:molokai_original = 1  " use monokai color
+let g:rehash256 = 1  " use monokai color
 colorscheme molokai
 
 "--------------------
