@@ -9,7 +9,6 @@ if has('vim_starting')
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
@@ -51,6 +50,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tomasr/molokai'
 
+call neobundle#end()
 filetype plugin indent on  " required!
 
 "--------------------
