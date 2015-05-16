@@ -33,7 +33,6 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'clausreinke/typescript-tools.vim'
 
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'
@@ -128,14 +127,9 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" js, coffee, ts completion
+" js, coffee completion
 let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
 let g:neocomplete#force_omni_input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
-let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?'
-
-" start typescript-tools
-nnoremap <silent><Leader>t :TSSstarthere<CR>
-autocmd FileType typescript nnoremap <silent>gd :TSSdef<CR>
 
 " popup menu height
 set pumheight=15
@@ -153,8 +147,6 @@ autocmd FileType go nmap <silent>K :Godoc<CR>
 
 " disable complete preview window
 set completeopt=menuone
-
-" default setting: nnoremap <C-l> :redraw!<CR>
 
 "--------------------
 " other plugins
@@ -209,10 +201,9 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
-" syntastic for ruby, js, ts, go
+" syntastic for ruby, js, go
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_typescript_checkers = ['tsc']
 
 " quickrun
 nnoremap <silent><Leader>q :QuickRun<CR>
