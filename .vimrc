@@ -33,6 +33,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'mxw/vim-jsx'
 
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'

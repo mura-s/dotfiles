@@ -1,1 +1,5 @@
 inoremap <c-]> <esc>
+vnoremap <c-]> <esc>
+
+inoremap <c-f> <right>
+inoremap <c-b> <left>
