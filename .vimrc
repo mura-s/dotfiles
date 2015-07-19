@@ -89,6 +89,10 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" esc
+inoremap <C-@> <esc>
+vnoremap <C-@> <esc>
+
 "--------------------
 " completion settings
 " neocomplete
