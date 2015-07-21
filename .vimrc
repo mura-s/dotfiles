@@ -73,8 +73,13 @@ colorscheme molokai
 
 "--------------------
 " key mappings
+" esc
+inoremap <C-@> <Esc>
+vnoremap <C-@> <Esc>
+
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
+nnoremap <C-@><C-@> :noh<CR>
 
 " move cursor in insert mode
 inoremap <C-f> <Right>
@@ -88,10 +93,6 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-
-" esc
-inoremap <C-@> <esc>
-vnoremap <C-@> <esc>
 
 "--------------------
 " completion settings
