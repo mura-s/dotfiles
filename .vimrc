@@ -48,7 +48,6 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 filetype plugin indent on  " required!
@@ -68,8 +67,7 @@ set splitbelow
 set splitright
 
 set background=dark
-let g:rehash256 = 1  " use monokai color
-colorscheme molokai
+colorscheme Tomorrow-Night-Eighties
 
 "--------------------
 " key mappings
@@ -176,6 +174,8 @@ function! s:unite_my_settings()
   " quit unite.vim
   nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+  nnoremap <silent> <buffer> <C-@><C-@> :q<CR>
+  inoremap <silent> <buffer> <C-@><C-@> <ESC>:q<CR>
   " move to parent directory
   imap <buffer> <C-h> <Plug>(unite_delete_backward_path)
   " split
