@@ -46,7 +46,6 @@ NeoBundle 'thinca/vim-ref'
 
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-
 NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
@@ -71,13 +70,8 @@ colorscheme Tomorrow-Night-Eighties
 
 "--------------------
 " key mappings
-" esc
-inoremap <C-@> <Esc>
-vnoremap <C-@> <Esc>
-
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
-nnoremap <C-@><C-@> :noh<CR>
 
 " move cursor in insert mode
 inoremap <C-f> <Right>
@@ -174,8 +168,6 @@ function! s:unite_my_settings()
   " quit unite.vim
   nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
   inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-  nnoremap <silent> <buffer> <C-@><C-@> :q<CR>
-  inoremap <silent> <buffer> <C-@><C-@> <ESC>:q<CR>
   " move to parent directory
   imap <buffer> <C-h> <Plug>(unite_delete_backward_path)
   " split
