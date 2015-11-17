@@ -22,8 +22,8 @@ eval "$(hub alias -s)"
 typeset -U path
 
 # terminal color
-export TERM=screen-256color
-export CLICOLOR=1
+#export TERM=screen-256color
+#export CLICOLOR=1
 # ls color
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 # completion color
