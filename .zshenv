@@ -37,10 +37,10 @@ export EDITOR=vi
 export LANG=ja_JP.UTF-8
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 
 # docker
-export DOCKER_HOST=tcp://192.168.59.103:2375
+#export DOCKER_HOST=tcp://192.168.59.103:2375
 
 # postgres
 export PGDATA=/usr/local/var/postgres
