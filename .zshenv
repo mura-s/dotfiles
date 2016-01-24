@@ -45,3 +45,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 # postgres
 export PGDATA=/usr/local/var/postgres
 export ARCHFLAGS="-arch x86_64"
+
+# hadoop
+export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.1/libexec/etc/hadoop
