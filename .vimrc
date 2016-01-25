@@ -240,7 +240,7 @@ set t_Co=256
 let g:lightline = {
 \  'colorscheme': 'default',
 \  'component': {
-\    'readonly': '%{&readonly?"\u2b64":""}',
+\    'readonly': '%{&readonly?"RO":""}',
 \  }
 \}
 
