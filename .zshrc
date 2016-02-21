@@ -222,7 +222,7 @@ if exists peco; then
   # select ssh host from /private/etc/hosts
   function peco-select-host () {
     local selected_host=$(grep -vE '(^#|^$|localhost)' /private/etc/hosts | \
-      awk -v user=$(echo "$USER" | tr '[a-z]' '[A-Z]') '{print user"@"$2}' | \
+      awk '{print $2}' | \
       peco --query "$LBUFFER")
     if [ -n "$selected_host" ]; then
       BUFFER="ssh ${selected_host}"
