@@ -1,4 +1,5 @@
 ####################
+# basic settings
 # use color
 autoload -Uz colors
 colors
@@ -6,30 +7,29 @@ colors
 # emacs keybind
 bindkey -e
 
-# history setting
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
 # prompt
-# two line
 PROMPT="%F{blue}[%n@%m]%f%F{yellow} %~
 %f> "
 
-# delimiter setting
+# delimiter
 autoload -Uz select-word-style
 select-word-style default
-# add delimiter (usage: delete per delimiter with Ctrl-w)
+# add delimiter
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 ####################
-# completion
+# completion settings
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit -u
 
-# node completion
+# node
 if [ -f /usr/local/share/zsh/site-functions/_npm ]; then
   source /usr/local/share/zsh/site-functions/_npm
 fi
@@ -40,25 +40,24 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # highlight
 zstyle ':completion:*:default' menu select
 
-# reverse traverse with Shift-Tab
+# reverse traverse (keymap: Shift-Tab)
 bindkey "^[[Z" reverse-menu-complete
 
 # ignore case
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# do not complement current directory after ../
+# ignore parents
 zstyle ':completion:*' ignore-parents parent pwd ..
 
-# complement command_name after sudo
+# for sudo
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 	                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
-# for ps command (complement process_name)
+# for ps command
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 ####################
-# vcs_info (version control system)
-# setting RPROMPT
+# vcs_info
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
@@ -67,10 +66,11 @@ precmd () {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+# set RPROMPT
 RPROMPT="%1(v|%F{magenta}%1v%f|)"
 
 ####################
-# option
+# option settings
 # print japanese file name
 setopt print_eight_bit
 
@@ -86,7 +86,7 @@ setopt IGNOREEOF
 # correct wrong command
 setopt correct
 
-# regard as comment after '#'
+# allow comments
 setopt interactive_comments
 
 # cd and pushd
@@ -101,13 +101,13 @@ setopt hist_save_nodups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 
-# complement as path_name after '='
+# completion after '='
 setopt magic_equal_subst
 
-# completion sugest
+# print completion list
 setopt auto_menu
 
-# use glob (high functional wildcard)
+# use glob
 setopt extended_glob
 
 ####################
@@ -219,7 +219,7 @@ if exists peco; then
   zle -N peco-ghq
   bindkey '^]' peco-ghq
 
-  # select ssh host from /private/etc/hosts
+  # select ssh host
   function peco-select-host () {
     local selected_host=$(grep -vE '(^#|^$|localhost)' /private/etc/hosts | \
       awk -v user=$(echo "$USER" | tr '[a-z]' '[A-Z]') '{print user"@"$2}' | \

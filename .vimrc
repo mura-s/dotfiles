@@ -73,11 +73,11 @@ colorscheme Tomorrow-Night-Eighties
 " clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
 
-" move cursor in insert mode
+" move cursor
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
-" delete in insert mode
+" delete
 inoremap <C-d> <Del>
 
 " move to the next visual line
@@ -108,7 +108,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
-" ruby completion
+" ruby
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 let g:rubycomplete_rails = 0
 let g:rubycomplete_buffer_loading = 1
@@ -125,7 +125,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" js, coffee completion
+" js, coffee
 let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
 let g:neocomplete#force_omni_input_patterns.coffee = '[^. \t]\.\%(\h\w*\)\?'
 
@@ -143,7 +143,7 @@ let g:godef_split=0
 " godoc (keymap: shift-k)
 autocmd FileType go nmap <silent>K :Godoc<CR>
 
-" disable complete preview window
+" disable completion preview window
 set completeopt=menuone
 
 "--------------------
@@ -151,7 +151,7 @@ set completeopt=menuone
 " unite.vim
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
-" The prefix key.
+" prefix key
 nnoremap    [unite]   <Nop>
 nmap	<Leader>f [unite]
 " keymap
@@ -199,7 +199,7 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
-" syntastic for ruby, js, go
+" syntastic for ruby, js
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 
@@ -214,7 +214,7 @@ let g:quickrun_config = {
 \  }
 \}
 
-" quickrun rspec_test only cursol line
+" quickrun for rspec
 let g:quickrun_config['ruby.rspec'] = {
 \  'command': 'rspec', 'cmdopt': ":%{line('.')} -cfd", 'exec': 'bundle exec %c %s%o %a'
 \}
@@ -223,11 +223,11 @@ augroup RSpec
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
-" vim-endwise (avoid conflict with vim-smartinput)
+" vim-endwise
 let g:endwise_no_mappings = 1
 autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
 
-" matchit (move def-end, if-endif with % key)
+" matchit (move def-end, if-endif. keymap: %)
 source $VIMRUNTIME/macros/matchit.vim
 
 " PreVim (for markdown file)
@@ -253,7 +253,7 @@ au BufNewFile,BufRead *.java,*.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 n
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
 
-" move to last edit position when opening file
+" move to last edit line when opening file
 augroup vimrcEx
   autocmd!
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
