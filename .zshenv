@@ -12,6 +12,9 @@ export GOPATH=$HOME
 # ghq PATH
 export PATH="$GOPATH/bin:$PATH"
 
+# app engine sdk for go
+export PATH="$HOME/go_appengine:$PATH"
+
 # node
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
@@ -45,3 +48,4 @@ export ARCHFLAGS="-arch x86_64"
 
 # hadoop
 #export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.1/libexec/etc/hadoop
+
