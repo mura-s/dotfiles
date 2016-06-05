@@ -31,6 +31,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'mxw/vim-jsx'
 
 NeoBundle 'kana/vim-smartinput'
