@@ -217,7 +217,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-ghq
-  bindkey '^]' peco-ghq
+  bindkey '^\' peco-ghq
 
   # select ssh host
   function peco-select-host () {
@@ -231,7 +231,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-select-host
-  bindkey '^\' peco-select-host
+  bindkey '^]' peco-select-host
 fi
 
 ####################
