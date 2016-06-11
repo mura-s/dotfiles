@@ -191,7 +191,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-cdr
-  bindkey '^@' peco-cdr
+  bindkey '^[' peco-cdr
 
   # git branch
   function peco-git-recent-all-branches () {
