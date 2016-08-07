@@ -19,7 +19,6 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
 NeoBundle 'scrooloose/nerdtree'
 
 NeoBundle 'Shougo/neocomplete'
@@ -148,17 +147,14 @@ set completeopt=menuone
 " other plugins
 " unite.vim
 let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable =1
 " prefix key
 nnoremap    [unite]   <Nop>
 nmap	<Leader>f [unite]
 " keymap
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]f :<C-u>Unite file_rec/git<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> [unite]f :<C-u>Unite file file/new<CR>
 nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
-nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
 " overwrite settings
 autocmd FileType unite call s:unite_my_settings()
