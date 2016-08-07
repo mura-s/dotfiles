@@ -14,7 +14,6 @@ NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'mac' : 'make -f make_mac.mak',
 \     'unix' : 'make -f make_unix.mak',
-\     'cygwin' : 'make -f make_cygwin.mak',
 \    },
 \ }
 
@@ -126,10 +125,6 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " js
 let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
 
-" popup menu height
-set pumheight=15
-
-"--------------------
 " golang
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
@@ -139,6 +134,9 @@ let g:godef_split=0
 
 " godoc (keymap: shift-k)
 autocmd FileType go nmap <silent>K :Godoc<CR>
+
+" popup menu height
+set pumheight=15
 
 " disable completion preview window
 set completeopt=menuone
