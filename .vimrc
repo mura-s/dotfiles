@@ -62,6 +62,11 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 
+" trailing space
+set list
+set listchars=tab:▸\ ,trail:-
+
+" colorscheme
 set background=dark
 colorscheme Tomorrow-Night-Eighties
 
@@ -147,7 +152,7 @@ set completeopt=menuone
 let g:unite_enable_start_insert=1
 " prefix key
 nnoremap    [unite]   <Nop>
-nmap	<Leader>f [unite]
+nmap <Leader>f [unite]
 " keymap
 nnoremap <silent> [unite]f :<C-u>Unite file_rec/git<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
@@ -250,13 +255,4 @@ augroup vimrcEx
   autocmd!
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
-augroup END
-
-" trailing space
-augroup HighlightTrailingSpaces
-  autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=239 ctermbg=239
-  autocmd VimEnter,WinEnter * match TrailingSpaces /\(\s\+$\|　\)/
-  " except unite.vim
-  autocmd FileType unite match
 augroup END
