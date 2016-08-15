@@ -1,51 +1,40 @@
 set nocompatible
 
 "--------------------
-" NeoBundle settings
+" plugin settings
 filetype off  " required!
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
-NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\     'mac' : 'make -f make_mac.mak',
-\     'unix' : 'make -f make_unix.mak',
-\    },
-\ }
+Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/nerdtree'
+Plug 'Shougo/unite.vim'
+Plug 'scrooloose/nerdtree'
 
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'dgryski/vim-godef'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'mxw/vim-jsx'
+Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'dgryski/vim-godef', { 'for': 'go' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/nerdcommenter'
+Plug 'kana/vim-smartinput'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'scrooloose/nerdcommenter'
 
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-ref'
+Plug 'scrooloose/syntastic'
+Plug 'thinca/vim-quickrun'
+Plug 'thinca/vim-ref'
 
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'itchyny/lightline.vim'
+Plug 'kannokanno/previm', { 'for': 'markdown' }
+Plug 'tyru/open-browser.vim'
+Plug 'itchyny/lightline.vim'
 
-call neobundle#end()
+call plug#end()
 filetype plugin indent on  " required!
 
 "--------------------
@@ -64,7 +53,7 @@ set splitright
 
 " trailing space
 set list
-set listchars=tab:▸\ ,trail:-
+set listchars=tab:»\ ,trail:-
 
 " colorscheme
 set background=dark
