@@ -143,7 +143,7 @@ nmap <Leader>f [unite]
 " keymap
 nnoremap <silent> [unite]f :<C-u>Unite file_rec/git<CR>
 nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep<CR>
+nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep/git<CR>
 nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
 
 " overwrite settings
