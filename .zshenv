@@ -13,7 +13,7 @@ export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 # app engine sdk for go
-export PATH="$HOME/go_appengine:$PATH"
+export PATH="$PATH:$HOME/go_appengine"
 
 # node
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
