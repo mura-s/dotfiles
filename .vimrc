@@ -7,7 +7,6 @@ filetype off  " required!
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
-
 Plug 'Shougo/unite.vim'
 Plug 'scrooloose/nerdtree'
 
@@ -25,7 +24,6 @@ Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdcommenter'
-
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-ref'
