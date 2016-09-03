@@ -20,6 +20,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
+Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -222,11 +223,24 @@ au BufNewFile,BufRead *.md set filetype=markdown
 set laststatus=2
 set t_Co=256
 let g:lightline = {
-\  'colorscheme': 'default',
-\  'component': {
-\    'readonly': '%{&readonly?"RO":""}',
-\  }
-\}
+  \ 'colorscheme': 'default',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component': {
+  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \ },
+  \ 'component_visible_condition': {
+  \   'readonly': '(&filetype!="help"&& &readonly)',
+  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \ },
+  \ 'separator': { 'left': '⮀', 'right': '⮂' },
+  \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+  \ }
 
 "--------------------
 " other settings
