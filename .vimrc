@@ -229,7 +229,7 @@ let g:lightline = {
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
-  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+  \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
   \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
   \ },
