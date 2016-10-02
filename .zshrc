@@ -59,8 +59,11 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 ####################
 # vcs_info
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "!"
+zstyle ':vcs_info:git:*' unstagedstr "+"
+zstyle ':vcs_info:*' formats '(%s)%u%c[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)[%b|%a]'
 precmd () {
   psvar=()
   LANG=en_US.UTF-8 vcs_info
