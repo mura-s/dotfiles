@@ -56,7 +56,8 @@ set listchars=tab:»\ ,trail:-
 
 " colorscheme
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+let g:rehash256 = 1
+colorscheme molokai
 
 "--------------------
 " key mappings
@@ -127,6 +128,14 @@ let g:godef_split=0
 
 " godoc (keymap: shift-k)
 autocmd FileType go nmap <silent>K :Godoc<CR>
+
+" go highlight
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " popup menu height
 set pumheight=15
