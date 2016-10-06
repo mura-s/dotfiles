@@ -196,6 +196,8 @@ let g:syntastic_mode_map = {
 " syntastic for ruby, js
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_list_type = "quickfix"
 
 " quickrun
 nnoremap <silent><Leader>q :QuickRun<CR>
