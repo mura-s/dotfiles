@@ -1,6 +1,3 @@
-set nocompatible
-
-"--------------------
 " plugin settings
 filetype off  " required!
 
