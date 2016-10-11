@@ -29,6 +29,7 @@ Plug 'thinca/vim-ref'
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'tyru/open-browser.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
 
 call plug#end()
 filetype plugin indent on  " required!
