@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'davidhalter/jedi-vim', { 'for': ['python'] } | Plug 'lambdalisue/vim-pyenv', { 'for': ['python'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'dgryski/vim-godef', { 'for': 'go' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
