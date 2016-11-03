@@ -2,6 +2,7 @@
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv virtualenv-init -)"
 
 # rbenv
