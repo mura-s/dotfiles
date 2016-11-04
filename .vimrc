@@ -1,6 +1,5 @@
 " plugin settings
 filetype off  " required!
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
@@ -8,27 +7,29 @@ Plug 'Shougo/unite.vim'
 Plug 'scrooloose/nerdtree'
 
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
-Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+
 Plug 'davidhalter/jedi-vim', { 'for': ['python'] } | Plug 'lambdalisue/vim-pyenv', { 'for': ['python'] }
+
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'dgryski/vim-godef', { 'for': 'go' }
+
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
+
+Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-ref'
-
-Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'tyru/open-browser.vim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 
@@ -98,25 +99,17 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
-" ruby
-autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
-let g:rubycomplete_rails = 0
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_include_object = 1
-let g:rubycomplete_include_object_space = 1
-
-" enable rails-vim
-let g:rails_level=4
-
-" enable heavy omni completion (ruby)
+" enable heavy omni completion
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" js
-let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_include_object = 1
+let g:rubycomplete_include_object_space = 1
 
 " golang
 " use goimports instead of gofmt
@@ -175,11 +168,6 @@ let NERDTreeMapOpenVSplit='<C-l>'
 " show dotfiles (hidden dotfiles: Shift-I)
 let NERDTreeShowHidden = 1
 
-" nerdcommenter
-let NERDSpaceDelims = 1
-nmap <Leader># <Plug>NERDCommenterToggle
-vmap <Leader># <Plug>NERDCommenterToggle
-
 " vim-ref (keymap: Shift-k)
 let g:ref_use_vimproc=1
 let g:ref_refe_version=2
@@ -192,7 +180,6 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
-" syntastic for ruby, js
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -208,15 +195,6 @@ let g:quickrun_config = {
 \    "runner/vimproc/updatetime" : 300
 \  }
 \}
-
-" quickrun for rspec
-let g:quickrun_config['ruby.rspec'] = {
-\  'command': 'rspec', 'cmdopt': ":%{line('.')} -cfd", 'exec': 'bundle exec %c %s%o %a'
-\}
-augroup RSpec
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-augroup END
 
 " vim-endwise
 let g:endwise_no_mappings = 1
