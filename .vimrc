@@ -22,6 +22,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javasc
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
