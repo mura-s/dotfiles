@@ -67,15 +67,13 @@ nnoremap <Esc><Esc> :noh<CR>
 " move cursor
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
-
-" delete
-inoremap <C-d> <Del>
-
-" move to the next visual line
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" delete
+inoremap <C-d> <Del>
 
 "--------------------
 " completion settings
@@ -110,6 +108,13 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_object_space = 1
+
+" python (Show Doc: K)
+let g:jedi#goto_definitions_command = "gd"
+
+" js
+autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
+autocmd FileType javascript,javascript.jsx nmap <silent>gd :TernDef<CR>
 
 " golang
 " use goimports instead of gofmt
