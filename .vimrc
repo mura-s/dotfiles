@@ -216,22 +216,22 @@ au BufNewFile,BufRead *.md set filetype=markdown
 set laststatus=2
 set t_Co=256
 let g:lightline = {
-  \ 'colorscheme': 'default',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component': {
-  \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
-  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'readonly': '(&filetype!="help"&& &readonly)',
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ }
-  \ }
+  \  'colorscheme': 'default',
+  \  'active': {
+  \    'left': [ [ 'mode', 'paste' ],
+  \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+  \  },
+  \  'component': {
+  \    'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
+  \    'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \    'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \  },
+  \  'component_visible_condition': {
+  \    'readonly': '(&filetype!="help"&& &readonly)',
+  \    'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \    'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \  }
+  \}
 
 "--------------------
 " other settings
