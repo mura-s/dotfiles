@@ -47,7 +47,7 @@ export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
 
 # postgres
 export PGDATA=/usr/local/var/postgres
