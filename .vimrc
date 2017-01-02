@@ -23,6 +23,7 @@ Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -104,12 +105,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" ruby
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_include_object = 1
-let g:rubycomplete_include_object_space = 1
-
 " python (Show Doc: K)
 let g:jedi#goto_definitions_command = "gd"
 
@@ -124,7 +119,7 @@ let g:go_fmt_command = 'goimports'
 " godef (keymap: gd)
 let g:godef_split=0
 
-" godoc (keymap: shift-k)
+" godoc (keymap: K)
 autocmd FileType go nmap <silent>K :Godoc<CR>
 
 " go highlight
@@ -185,7 +180,7 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
-let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_list_type = "quickfix"
