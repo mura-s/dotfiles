@@ -25,9 +25,9 @@ zstyle ':zle:*' word-style unspecified
 
 ####################
 # completion settings
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
-compinit -u
+compinit -C
 
 # node
 if [ -f /usr/local/share/zsh/site-functions/_npm ]; then
@@ -256,3 +256,4 @@ source "$HOME/google-cloud-sdk/path.zsh.inc"
 
 # The next line enables shell command completion for gcloud.
 source "$HOME/google-cloud-sdk/completion.zsh.inc"
+
