@@ -109,12 +109,6 @@ setopt auto_menu
 setopt extended_glob
 
 ####################
-# keybind
-# history search
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-
-####################
 # cdr
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -131,31 +125,17 @@ fi
 # alias
 alias mv='mv -i'
 alias cp='cp -i'
-
 alias grep='grep --color'
-
-alias pu='pushd'
-alias po='popd'
-alias d='dirs -v'
 alias h='history -15'
+
+alias ls='ls -FG'
+alias ll='ls -lFG'
+alias la='ls -AFG'
 
 alias be='bundle exec'
 alias bi='bundle install --path vendor/bundle'
 alias bu='bundle update'
 alias bl='bundle list'
-
-case "${OSTYPE}" in
-darwin*)
-	alias ls='ls -FG'
-	alias ll='ls -lFG'
-	alias la='ls -AFG'
-	;;
-linux*)
-	alias ls='ls -F --color=auto'
-	alias ll='ls -lF --color=auto'
-	alias la='ls -AF --color=auto'
-	;;
-esac
 
 ####################
 # peco
