@@ -12,10 +12,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# prompt
-PROMPT="%F{blue}[%n@%m]%f%F{yellow} %~
-%f> "
-
 # delimiter
 autoload -Uz select-word-style
 select-word-style default
@@ -57,15 +53,18 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "!"
 zstyle ':vcs_info:git:*' unstagedstr "+"
-zstyle ':vcs_info:*' formats '%u%c(%s)[%b]'
-zstyle ':vcs_info:*' actionformats '%u%c(%s)[%b|%a]'
+zstyle ':vcs_info:*' formats '%u%c[%b]'
+zstyle ':vcs_info:*' actionformats '%u%c[%b|%a]'
 precmd () {
   psvar=()
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-# set RPROMPT
-RPROMPT="%1(v|%F{magenta}%1v%f|)"
+
+####################
+# prompt
+PROMPT="%F{red}%n%f%F{cyan} %d %f$ "
+RPROMPT="%1(v|%F{green}%1v%f|)"
 
 ####################
 # option settings
