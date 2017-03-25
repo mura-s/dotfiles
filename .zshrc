@@ -63,7 +63,7 @@ precmd () {
 
 ####################
 # prompt
-PROMPT="%F{green}%n%f %F{blue}%d%f $ "
+PROMPT="%F{green}%n%f %F{blue}%~%f $ "
 RPROMPT="%1(v|%F{red}%1v%f|)"
 
 ####################
