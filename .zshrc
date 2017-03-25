@@ -63,8 +63,8 @@ precmd () {
 
 ####################
 # prompt
-PROMPT="%F{red}%n%f%F{cyan} %d %f$ "
-RPROMPT="%1(v|%F{green}%1v%f|)"
+PROMPT="%F{green}%n%f %F{blue}%d%f $ "
+RPROMPT="%1(v|%F{red}%1v%f|)"
 
 ####################
 # option settings
