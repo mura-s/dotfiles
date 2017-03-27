@@ -23,7 +23,7 @@ zstyle ':zle:*' word-style unspecified
 # completion settings
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
-compinit -C
+compinit -u
 
 # color
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
