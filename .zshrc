@@ -25,9 +25,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
 
-# color
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 # highlight
 zstyle ':completion:*:default' menu select
 
@@ -130,11 +127,6 @@ alias h='history -15'
 alias ls='ls -FG'
 alias ll='ls -lFG'
 alias la='ls -AFG'
-
-alias be='bundle exec'
-alias bi='bundle install --path vendor/bundle'
-alias bu='bundle update'
-alias bl='bundle list'
 
 ####################
 # peco
