@@ -3,8 +3,6 @@ filetype off  " required!
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
-Plug 'Shougo/unite.vim'
-Plug 'scrooloose/nerdtree'
 
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 
@@ -20,6 +18,9 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
 
 Plug 'kannokanno/previm', { 'for': 'markdown' }
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -137,36 +138,18 @@ set completeopt=menuone
 
 "--------------------
 " other plugins
-" unite.vim
-let g:unite_enable_start_insert=1
-" prefix key
-nnoremap    [unite]   <Nop>
-nmap <Leader>f [unite]
-" keymap
-nnoremap <silent> [unite]f :<C-u>Unite file_rec/git<CR>
-nnoremap <silent> [unite]d :<C-u>Unite file file/new<CR>
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=search-buffer grep/git<CR>
-nnoremap <silent> [unite]s :<C-u>UniteResume search-buffer<CR>
-
-" overwrite settings
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  " quit unite.vim
-  nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-  inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-  " move to parent directory
-  imap <buffer> <C-h> <Plug>(unite_delete_backward_path)
-  " split
-  inoremap <silent> <buffer> <expr><C-j> unite#do_action('split')
-  inoremap <silent> <buffer> <expr><C-l> unite#do_action('vsplit')
-endfunction
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
+let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules'
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeMapOpenSplit='<C-j>'
-let NERDTreeMapOpenVSplit='<C-l>'
-" show dotfiles (hidden dotfiles: Shift-I)
+let NERDTreeMapOpenSplit='<C-x>'
+let NERDTreeMapOpenVSplit='<C-v>'
 let NERDTreeShowHidden = 1
 
 " vim-ref (keymap: Shift-k)
