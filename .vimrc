@@ -109,10 +109,6 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " python (Show Doc: K)
 let g:jedi#goto_definitions_command = "gd"
 
-" js
-autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
-autocmd FileType javascript,javascript.jsx nmap <silent>gd :TernDef<CR>
-
 " golang
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
@@ -129,6 +125,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
+
+" js
+autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
+autocmd FileType javascript,javascript.jsx nmap <silent>gd :TernDef<CR>
 
 " popup menu height
 set pumheight=15
