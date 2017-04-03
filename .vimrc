@@ -144,7 +144,7 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
-let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules'
+let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target'
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
