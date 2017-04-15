@@ -2,8 +2,6 @@
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init - --no-rehash)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv virtualenv-init -)"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
