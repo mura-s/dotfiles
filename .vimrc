@@ -6,7 +6,7 @@ Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
 
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 
-Plug 'davidhalter/jedi-vim', { 'for': ['python'] } | Plug 'lambdalisue/vim-pyenv', { 'for': ['python'] }
+Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'dgryski/vim-godef', { 'for': 'go' }
