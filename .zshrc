@@ -127,6 +127,7 @@ alias h='history -15'
 alias ls='ls -FG'
 alias ll='ls -lFG'
 alias la='ls -AFG'
+alias lla='ls -lAFG'
 
 ####################
 # peco
