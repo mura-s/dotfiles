@@ -6,12 +6,10 @@ Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
 
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 
-Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'dgryski/vim-godef', { 'for': 'go' }
 
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
 
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
@@ -27,7 +25,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-ref'
@@ -106,9 +103,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" python (Show Doc: K)
-let g:jedi#goto_definitions_command = "gd"
-
 " golang
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
@@ -125,6 +119,9 @@ let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
+
+" python (Show Doc: K)
+let g:jedi#goto_definitions_command = "gd"
 
 " js
 autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
@@ -179,10 +176,6 @@ let g:quickrun_config = {
 \    "runner/vimproc/updatetime" : 300
 \  }
 \}
-
-" vim-endwise
-let g:endwise_no_mappings = 1
-autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
 
 " matchit (move def-end, if-endif. keymap: %)
 source $VIMRUNTIME/macros/matchit.vim
