@@ -7,17 +7,45 @@ colors
 # emacs keybind
 bindkey -e
 
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-
 # delimiter
 autoload -Uz select-word-style
 select-word-style default
-# add delimiter
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+
+# no beep
+setopt no_beep
+
+# no Ctrl-S flow control
+setopt no_flow_control
+
+# no Ctrl-D logout
+setopt IGNOREEOF
+
+# correct wrong command
+setopt correct
+
+# allow comments
+setopt interactive_comments
+
+# completion after '='
+setopt magic_equal_subst
+
+# print completion list
+setopt auto_menu
+
+# use glob
+setopt extended_glob
 
 ####################
 # completion settings
@@ -33,16 +61,6 @@ bindkey "^[[Z" reverse-menu-complete
 
 # ignore case
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# ignore parents
-zstyle ':completion:*' ignore-parents parent pwd ..
-
-# for sudo
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-	                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
-
-# for ps command
-zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 ####################
 # vcs_info
@@ -64,47 +82,6 @@ PROMPT="%F{green}%n%f %F{blue}%~%f $ "
 RPROMPT="%1(v|%F{red}%1v%f|)"
 
 ####################
-# option settings
-# print japanese file name
-setopt print_eight_bit
-
-# no beep
-setopt no_beep
-
-# no flow control
-setopt no_flow_control
-
-# no Ctrl-D logout
-setopt IGNOREEOF
-
-# correct wrong command
-setopt correct
-
-# allow comments
-setopt interactive_comments
-
-# cd and pushd
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-
-# history
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_save_nodups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-
-# completion after '='
-setopt magic_equal_subst
-
-# print completion list
-setopt auto_menu
-
-# use glob
-setopt extended_glob
-
-####################
 # cdr
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -116,18 +93,6 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
   zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/shell/chpwd-recent-dirs"
   zstyle ':chpwd:*' recent-dirs-pushd true
 fi
-
-####################
-# alias
-alias mv='mv -i'
-alias cp='cp -i'
-alias grep='grep --color'
-alias h='history -15'
-
-alias ls='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -AFG'
-alias lla='ls -lAFG'
 
 ####################
 # peco
@@ -203,6 +168,18 @@ if exists peco; then
   zle -N peco-select-host
   bindkey '^]' peco-select-host
 fi
+
+####################
+# alias
+alias mv='mv -i'
+alias cp='cp -i'
+alias grep='grep --color'
+alias h='history -15'
+
+alias ls='ls -FG'
+alias ll='ls -lFG'
+alias la='ls -AFG'
+alias lla='ls -lAFG'
 
 ####################
 # tmux auto start
