@@ -194,7 +194,7 @@ au BufNewFile,BufRead *.md set filetype=markdown
 set laststatus=2
 set t_Co=256
 let g:lightline = {
-  \  'colorscheme': 'default',
+  \  'colorscheme': 'Dracula',
   \  'active': {
   \    'left': [ [ 'mode', 'paste' ],
   \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
