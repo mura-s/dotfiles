@@ -40,16 +40,19 @@ filetype plugin indent on  " required!
 " basic settings
 syntax enable
 set number
+set autoindent
+set autoread
+set noswapfile
+set backspace=indent,eol,start
+
+" search
 set hlsearch
 set incsearch
 set ignorecase
-set noswapfile
-set autoindent
-set autoread
-set backspace=indent,eol,start
+
+" split
 set splitbelow
 set splitright
-set cursorline
 
 " trailing space
 set list
@@ -59,6 +62,10 @@ set listchars=tab:»\ ,trail:-
 set background=dark
 let g:rehash256 = 1
 colorscheme molokai
+
+" cursorline
+set cursorline
+hi clear CursorLine
 
 "--------------------
 " key mappings
