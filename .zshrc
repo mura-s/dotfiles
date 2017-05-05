@@ -78,8 +78,8 @@ precmd () {
 
 ####################
 # prompt
-PROMPT="%F{green}%n%f %F{blue}%~%f $ "
-RPROMPT="%1(v|%F{red}%1v%f|)"
+PROMPT="%B%F{green}%n%f %F{blue}%~%f $%b "
+RPROMPT="%B%1(v|%F{cyan}%1v%f|)%b"
 
 ####################
 # cdr

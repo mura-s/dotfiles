@@ -31,7 +31,7 @@ Plug 'thinca/vim-ref'
 Plug 'tyru/open-browser.vim'
 
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
+Plug 'dracula/vim'
 
 call plug#end()
 filetype plugin indent on  " required!
@@ -59,9 +59,7 @@ set list
 set listchars=tab:»\ ,trail:-
 
 " colorscheme
-set background=dark
-let g:rehash256 = 1
-colorscheme molokai
+color dracula
 
 " cursorline
 set cursorline
