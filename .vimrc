@@ -58,14 +58,10 @@ set splitright
 set list
 set listchars=tab:»\ ,trail:-
 
-" cursorline
-set cursorline
-
 " colorscheme
 color dracula
 hi Normal ctermbg=none
 hi SpecialKey ctermfg=8 ctermbg=none
-hi clear CursorLine
 
 "--------------------
 " key mappings
