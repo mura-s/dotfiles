@@ -111,11 +111,14 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
 
-" godef (keymap: gd)
+" GoDef (keymap: gd)
 let g:godef_split=0
 
-" godoc (keymap: K)
-autocmd FileType go nmap <silent>K :Godoc<CR>
+" GoDescribe
+autocmd FileType go nmap <silent>gp :GoDescribe<CR>
+
+" GoDoc (keymap: K)
+autocmd FileType go nmap <silent>K :GoDoc<CR>
 
 " go highlight
 let g:go_highlight_functions = 1
