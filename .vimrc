@@ -114,7 +114,7 @@ let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\
 " c, c++
 let g:clang_auto = 0
 let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=c++1z -stdlib=libc++'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 " golang
 " use goimports instead of gofmt
