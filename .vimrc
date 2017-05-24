@@ -217,7 +217,7 @@ let g:lightline = {
 " indent
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 au BufNewFile,BufRead *.py,*.java set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-au BufNewFile,BufRead *.c,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au BufNewFile,BufRead *.c,*.cpp,*.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
