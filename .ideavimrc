@@ -1,2 +1,4 @@
 inoremap <c-f> <right>
 inoremap <c-b> <left>
+inoremap <c-h> <bs>
+inoremap <c-d> <del>
