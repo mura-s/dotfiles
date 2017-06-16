@@ -1,3 +1,9 @@
+" search
+set hlsearch
+set incsearch
+set ignorecase
+
+" keymap
 inoremap <c-f> <right>
 inoremap <c-b> <left>
 inoremap <c-h> <bs>
