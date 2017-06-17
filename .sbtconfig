@@ -1,1 +1,0 @@
-SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=1024M"
