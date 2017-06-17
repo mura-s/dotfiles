@@ -1,1 +1,1 @@
-SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=512M -XX:MaxPermSize=1024M"
+SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=1024M"
