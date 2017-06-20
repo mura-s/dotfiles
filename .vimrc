@@ -17,6 +17,10 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
 
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 Plug 'ctrlpvim/ctrlp.vim'
