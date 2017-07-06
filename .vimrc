@@ -9,7 +9,6 @@ Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-s
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'dgryski/vim-godef', { 'for': 'go' }
 
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
@@ -18,8 +17,6 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
 
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
@@ -121,12 +118,12 @@ let g:clang_cpp_completeopt = 'menuone'
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 
-" golang
+" golang (GoDef: gd)
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
 
-" GoDef (keymap: gd)
-let g:godef_split=0
+" enable gocode unimported-packages
+let g:go_gocode_unimported_packages = 1
 
 " GoDescribe
 autocmd FileType go nmap <silent>gp :GoDescribe<CR>
@@ -141,7 +138,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
 
-" python (Show Doc: K)
+" python (ShowDoc: K)
 let g:jedi#goto_definitions_command = "gd"
 
 " js
