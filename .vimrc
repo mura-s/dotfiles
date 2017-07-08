@@ -6,6 +6,7 @@ Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -167,6 +168,9 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeMapOpenSplit='<C-x>'
 let NERDTreeMapOpenVSplit='<C-v>'
 let NERDTreeShowHidden = 1
+
+" tagbar
+nnoremap <silent><Leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_enable_signs=1
