@@ -21,6 +21,8 @@ Plug 'dracula/vim'
 
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 
+Plug 'editorconfig/editorconfig-vim'
+
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
 Plug 'fatih/vim-go', { 'for': 'go' }
