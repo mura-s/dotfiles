@@ -4,6 +4,21 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
 
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'scrooloose/syntastic'
+Plug 'thinca/vim-quickrun'
+Plug 'jiangmiao/auto-pairs'
+Plug 'thinca/vim-ref'
+Plug 'tyru/open-browser.vim'
+
+Plug 'itchyny/lightline.vim'
+Plug 'dracula/vim'
+
 Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
@@ -19,22 +34,6 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javasc
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 Plug 'kannokanno/previm', { 'for': 'markdown' }
-
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-Plug 'kana/vim-smartinput'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
-Plug 'thinca/vim-quickrun'
-Plug 'thinca/vim-ref'
-Plug 'tyru/open-browser.vim'
-
-Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim'
 
 call plug#end()
 filetype plugin indent on  " required!
@@ -125,10 +124,7 @@ let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 
 " golang
-" use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
-
-" enable gocode unimported-packages
 let g:go_gocode_unimported_packages = 1
 
 " go highlight
@@ -170,11 +166,6 @@ let NERDTreeMapOpenSplit='<C-x>'
 let NERDTreeMapOpenVSplit='<C-v>'
 let NERDTreeShowHidden = 1
 
-" vim-ref (keymap: Shift-k)
-let g:ref_use_vimproc=1
-let g:ref_refe_version=2
-let g:ref_refe_encoding = 'utf-8'
-
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
@@ -187,8 +178,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_list_type = "quickfix"
 
-" quickrun
-nnoremap <silent><Leader>q :QuickRun<CR>
+" quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
 \  "_" : {
 \    "outputter/buffer/split" : "15sp",
@@ -198,8 +188,10 @@ let g:quickrun_config = {
 \  }
 \}
 
-" matchit (move def-end, if-endif. keymap: %)
-source $VIMRUNTIME/macros/matchit.vim
+" vim-ref (keymap: Shift-k)
+let g:ref_use_vimproc=1
+let g:ref_refe_version=2
+let g:ref_refe_encoding = 'utf-8'
 
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
@@ -232,6 +224,9 @@ let g:lightline = {
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 au BufNewFile,BufRead *.c,*.cpp,*.py,*.java set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 au BufNewFile,BufRead *.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
+" matchit (move def-end, if-endif. keymap: %)
+source $VIMRUNTIME/macros/matchit.vim
 
 " grep & quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
