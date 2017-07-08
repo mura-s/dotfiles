@@ -84,6 +84,12 @@ inoremap <C-d> <Del>
 
 "--------------------
 " completion settings
+" popup menu height
+set pumheight=15
+
+" disable completion preview window
+set completeopt=menuone
+
 " neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -118,18 +124,12 @@ let g:clang_cpp_completeopt = 'menuone'
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 
-" golang (GoDef: gd)
+" golang
 " use goimports instead of gofmt
 let g:go_fmt_command = 'goimports'
 
 " enable gocode unimported-packages
 let g:go_gocode_unimported_packages = 1
-
-" GoDescribe
-autocmd FileType go nmap <silent>gp :GoDescribe<CR>
-
-" GoDoc (keymap: K)
-autocmd FileType go nmap <silent>K :GoDoc<CR>
 
 " go highlight
 let g:go_highlight_functions = 1
@@ -138,18 +138,18 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
 
-" python (ShowDoc: K)
+" go keymap
+" nmap <silent>gd :GoDef<CR>
+autocmd FileType go nmap <silent>gD :GoDescribe<CR>
+autocmd FileType go nmap <silent>K :GoDoc<CR>
+
+" python
+" nmap <silent>K :ShowDoc<CR>
 let g:jedi#goto_definitions_command = "gd"
 
 " js
 autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
 autocmd FileType javascript,javascript.jsx nmap <silent>gd :TernDef<CR>
-
-" popup menu height
-set pumheight=15
-
-" disable completion preview window
-set completeopt=menuone
 
 "--------------------
 " other plugins
