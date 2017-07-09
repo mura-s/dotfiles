@@ -75,8 +75,7 @@ autocmd FileType * setlocal formatoptions-=ro
 " move to last edit line when opening file
 augroup vimrcEx
   autocmd!
-  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
-  \ exe "normal g`\"" | endif
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 augroup END
 
 " indent
@@ -228,19 +227,19 @@ au BufNewFile,BufRead *.md set filetype=markdown
 set laststatus=2
 set t_Co=256
 let g:lightline = {
-  \  'colorscheme': 'Dracula',
-  \  'active': {
-  \    'left': [ [ 'mode', 'paste' ],
-  \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-  \  },
-  \  'component': {
-  \    'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
-  \    'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \    'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \  },
-  \  'component_visible_condition': {
-  \    'readonly': '(&filetype!="help"&& &readonly)',
-  \    'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \    'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \  }
-  \}
+\  'colorscheme': 'Dracula',
+\  'active': {
+\    'left': [ [ 'mode', 'paste' ],
+\              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+\  },
+\  'component': {
+\    'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
+\    'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+\    'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+\  },
+\  'component_visible_condition': {
+\    'readonly': '(&filetype!="help"&& &readonly)',
+\    'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+\    'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+\  }
+\}
