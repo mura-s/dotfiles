@@ -63,6 +63,27 @@ set splitright
 set list
 set listchars=tab:»\ ,trail:-
 
+" matchit (move def-end, if-endif. keymap: %)
+source $VIMRUNTIME/macros/matchit.vim
+
+" grep & quickfix window
+autocmd QuickFixCmdPost *grep* cwindow
+
+" stop auto comment out
+autocmd FileType * setlocal formatoptions-=ro
+
+" move to last edit line when opening file
+augroup vimrcEx
+  autocmd!
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
+" indent
+au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+au BufNewFile,BufRead *.c,*.cpp,*.py,*.java set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+au BufNewFile,BufRead *.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
 " colorscheme
 color dracula
 hi Normal ctermbg=none
@@ -223,26 +244,3 @@ let g:lightline = {
   \    'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \  }
   \}
-
-"--------------------
-" other settings
-" indent
-au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-au BufNewFile,BufRead *.c,*.cpp,*.py,*.java set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-au BufNewFile,BufRead *.go set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-
-" matchit (move def-end, if-endif. keymap: %)
-source $VIMRUNTIME/macros/matchit.vim
-
-" grep & quickfix window
-autocmd QuickFixCmdPost *grep* cwindow
-
-" stop auto comment out
-autocmd FileType * setlocal formatoptions-=ro
-
-" move to last edit line when opening file
-augroup vimrcEx
-  autocmd!
-  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
-  \ exe "normal g`\"" | endif
-augroup END
