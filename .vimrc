@@ -152,6 +152,7 @@ let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 " golang
 let g:go_fmt_command = 'goimports'
 let g:go_gocode_unimported_packages = 1
+let g:go_list_type = "quickfix"
 
 " go highlight
 let g:go_highlight_functions = 1
@@ -202,10 +203,9 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:go_list_type = "quickfix"
 
 " quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
