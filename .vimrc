@@ -59,6 +59,9 @@ set ignorecase
 set splitbelow
 set splitright
 
+" clipboard
+set clipboard=unnamed
+
 " trailing space
 set list
 set listchars=tab:»\ ,trail:-
