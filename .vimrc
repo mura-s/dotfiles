@@ -55,10 +55,6 @@ set hlsearch
 set incsearch
 set ignorecase
 
-" split
-set splitbelow
-set splitright
-
 " clipboard
 set clipboard=unnamed
 
@@ -105,6 +101,7 @@ vnoremap j gj
 vnoremap k gk
 
 " delete
+inoremap <C-h> <BS>
 inoremap <C-d> <Del>
 
 "--------------------
