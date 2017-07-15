@@ -163,8 +163,8 @@ let g:go_highlight_build_constraints = 1
 autocmd FileType go nmap <silent>gD :GoDescribe<CR>
 autocmd FileType go nmap <silent>K :GoDoc<CR>
 autocmd FileType go nmap <silent>ga :GoAlternate<CR>
-autocmd FileType go nmap <silent>gr :GoRename<CR>
-autocmd FileType go nmap <silent>gR :GoReferrers<CR>
+autocmd FileType go nmap <silent>gr :GoReferrers<CR>
+autocmd FileType go nmap <silent>gR :GoRename<CR>
 
 " python
 " nmap <silent>K :ShowDoc<CR>
