@@ -55,6 +55,9 @@ set hlsearch
 set incsearch
 set ignorecase
 
+" menu
+set wildmenu wildmode=list:longest
+
 " clipboard
 set clipboard=unnamed
 
