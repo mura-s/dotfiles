@@ -162,10 +162,12 @@ let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
 
 " go keymap
-" nmap <silent>gd :GoDef<CR>
+autocmd FileType go nmap gd <Plug>(go-def)
+autocmd FileType go nmap gs <Plug>(go-def-split)
 autocmd FileType go nmap <silent>gD :GoDescribe<CR>
-autocmd FileType go nmap <silent>K :GoDoc<CR>
+autocmd FileType go nmap <silent>K  :GoDoc<CR>
 autocmd FileType go nmap <silent>ga :GoAlternate<CR>
+autocmd FileType go nmap <silent>gi :GoImplements<CR>
 autocmd FileType go nmap <silent>gr :GoReferrers<CR>
 autocmd FileType go nmap <silent>gR :GoRename<CR>
 
