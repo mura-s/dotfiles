@@ -13,6 +13,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # node
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 # go
 export GOPATH=$HOME
 
