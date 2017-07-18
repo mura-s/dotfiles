@@ -10,14 +10,14 @@ eval "$(rbenv init - --no-rehash)"
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# node
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
 # go
 export GOPATH=$HOME
 
-# ghq PATH
+# go tools PATH
 export PATH="$GOPATH/bin:$PATH"
-
-# node
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
