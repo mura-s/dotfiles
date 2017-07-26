@@ -163,7 +163,8 @@ let g:go_highlight_build_constraints = 1
 
 " go keymap
 autocmd FileType go nmap gd <Plug>(go-def)
-autocmd FileType go nmap gs <Plug>(go-def-split)
+autocmd FileType go nmap gx <Plug>(go-def-split)
+autocmd FileType go nmap gv <Plug>(go-def-vertical)
 autocmd FileType go nmap <silent>gD :GoDescribe<CR>
 autocmd FileType go nmap <silent>K  :GoDoc<CR>
 autocmd FileType go nmap <silent>ga :GoAlternate<CR>
