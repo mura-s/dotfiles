@@ -237,7 +237,7 @@ let g:lightline = {
 \  'colorscheme': 'Dracula',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
-\              [ 'fugitive', 'readonly', 'absolutepath', 'modified' ] ]
+\              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
 \  },
 \  'component': {
 \    'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
