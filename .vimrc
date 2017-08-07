@@ -26,17 +26,12 @@ Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-s
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
-
 Plug 'fatih/vim-go', { 'for': 'go' }
-
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
-
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 call plug#end()
@@ -56,10 +51,6 @@ set hlsearch
 set incsearch
 set ignorecase
 
-" split
-set splitbelow
-set splitright
-
 " menu
 set wildmenu wildmode=list:longest
 
@@ -78,12 +69,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
-
-" move to last edit line when opening file
-augroup vimrcEx
-  autocmd!
-  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-augroup END
 
 " indent
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -226,7 +211,7 @@ let g:quickrun_config = {
 \  }
 \}
 
-" ack.vim
+" ack.vim (:Ack [options] {pattern} [{directories}])
 let g:ackprg = 'ag --vimgrep'
 
 " vim-ref (keymap: Shift-k)
