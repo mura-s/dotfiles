@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
+Plug 'mileszs/ack.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'thinca/vim-ref'
 Plug 'tyru/open-browser.vim'
@@ -224,6 +225,9 @@ let g:quickrun_config = {
 \    "runner/vimproc/updatetime" : 300
 \  }
 \}
+
+" ack.vim
+let g:ackprg = 'ag --vimgrep'
 
 " vim-ref (keymap: Shift-k)
 let g:ref_use_vimproc=1
