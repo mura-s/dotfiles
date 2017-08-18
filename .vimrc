@@ -15,7 +15,6 @@ Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
 Plug 'mileszs/ack.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'thinca/vim-ref'
 Plug 'tyru/open-browser.vim'
 
 Plug 'itchyny/lightline.vim'
@@ -32,6 +31,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 call plug#end()
@@ -50,9 +50,6 @@ set backspace=indent,eol,start
 set hlsearch
 set incsearch
 set ignorecase
-
-" menu
-set wildmenu wildmode=list:longest
 
 " clipboard
 set clipboard=unnamed
@@ -213,11 +210,6 @@ let g:quickrun_config = {
 
 " ack.vim (:Ack [options] {pattern} [{directories}])
 let g:ackprg = 'ag --vimgrep'
-
-" vim-ref (keymap: Shift-k)
-let g:ref_use_vimproc=1
-let g:ref_refe_version=2
-let g:ref_refe_encoding = 'utf-8'
 
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
