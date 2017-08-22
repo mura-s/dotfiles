@@ -51,7 +51,7 @@ setopt extended_glob
 # completion settings
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
-compinit -u
+compinit -C
 
 # highlight
 zstyle ':completion:*:default' menu select
