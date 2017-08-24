@@ -194,7 +194,7 @@ nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
-let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers = ['eslint']
 
