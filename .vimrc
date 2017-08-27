@@ -58,9 +58,6 @@ set clipboard=unnamed
 set list
 set listchars=tab:»\ ,trail:-
 
-" matchit (move def-end, if-endif. keymap: %)
-source $VIMRUNTIME/macros/matchit.vim
-
 " grep & quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
 
