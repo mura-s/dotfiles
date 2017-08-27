@@ -116,18 +116,6 @@ if exists peco; then
   zle -N peco-select-history
   bindkey '^r' peco-select-history
 
-  # cdr
-  function peco-cdr () {
-    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
-    if [ -n "$selected_dir" ]; then
-      BUFFER="cd ${selected_dir}"
-      zle accept-line
-    fi
-    zle clear-screen
-  }
-  zle -N peco-cdr
-  bindkey '^[' peco-cdr
-
   # git branch
   function peco-git-recent-all-branches () {
     local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
@@ -142,6 +130,18 @@ if exists peco; then
   zle -N peco-git-recent-all-branches
   bindkey '^g' peco-git-recent-all-branches
 
+  # cdr
+  function peco-cdr () {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N peco-cdr
+  bindkey '^[' peco-cdr
+
   # ghq
   function peco-ghq () {
     local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
@@ -152,21 +152,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-ghq
-  bindkey '^\' peco-ghq
-
-  # select ssh host
-  function peco-select-host () {
-    local selected_host=$(grep -vE '(^#|^$|localhost)' /private/etc/hosts | \
-      awk '{print $2}' | \
-      peco --query "$LBUFFER")
-    if [ -n "$selected_host" ]; then
-      BUFFER="ssh ${selected_host}"
-      zle accept-line
-    fi
-    zle clear-screen
-  }
-  zle -N peco-select-host
-  bindkey '^]' peco-select-host
+  bindkey '^]' peco-ghq
 fi
 
 ####################
