@@ -2,8 +2,6 @@
 filetype off  " required!
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plugged/vimproc.vim', 'do': 'make' }
-
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
@@ -20,17 +18,12 @@ Plug 'tyru/open-browser.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim'
 
-Plug 'Shougo/neocomplete' | Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
-
 Plug 'editorconfig/editorconfig-vim'
-
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
@@ -99,33 +92,6 @@ set pumheight=15
 " disable completion preview window
 set completeopt=menuone
 
-" neocomplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#auto_completion_start_length = 3
-let g:neocomplete#manual_completion_start_length = 3
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-inoremap <expr><C-y> neocomplete#close_popup()
-inoremap <expr><C-e> neocomplete#cancel_popup()
-
-" enable heavy omni completion
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
 " c, c++
 let g:clang_auto = 0
 let g:clang_c_completeopt = 'menuone'
@@ -135,8 +101,8 @@ let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 
 " golang
 let g:go_fmt_command = 'goimports'
-let g:go_gocode_unimported_packages = 1
 let g:go_list_type = "quickfix"
+let g:go_gocode_unimported_packages = 1
 
 " go highlight
 let g:go_highlight_functions = 1
@@ -161,8 +127,8 @@ autocmd FileType go nmap <silent>gR :GoRename<CR>
 let g:jedi#goto_definitions_command = "gd"
 
 " js
-autocmd FileType javascript,javascript.jsx nmap <silent>K :TernDoc<CR>
-autocmd FileType javascript,javascript.jsx nmap <silent>gd :TernDef<CR>
+autocmd FileType javascript nmap <silent>K :TernDoc<CR>
+autocmd FileType javascript nmap <silent>gd :TernDef<CR>
 
 "--------------------
 " other plugins
@@ -185,7 +151,7 @@ nnoremap <silent><Leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_loc_list=1
 nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
@@ -199,8 +165,6 @@ let g:quickrun_config = {
 \  "_" : {
 \    "outputter/buffer/split" : "15sp",
 \    "outputter/buffer/into" : 1,
-\    "runner" : "vimproc",
-\    "runner/vimproc/updatetime" : 300
 \  }
 \}
 
@@ -209,7 +173,6 @@ let g:ackprg = 'ag --vimgrep'
 
 " PreVim (for markdown file)
 nnoremap <silent><Leader>m :PrevimOpen<CR>
-au BufNewFile,BufRead *.md set filetype=markdown
 
 " lightline.vim
 set laststatus=2
