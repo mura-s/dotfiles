@@ -123,7 +123,7 @@ autocmd FileType go nmap <silent>gr :GoReferrers<CR>
 autocmd FileType go nmap <silent>gR :GoRename<CR>
 
 " python
-" nmap <silent>K :ShowDoc<CR>
+autocmd FileType python nmap <silent>K :ShowDoc<CR>
 let g:jedi#goto_definitions_command = "gd"
 
 " js
