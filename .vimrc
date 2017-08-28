@@ -1,6 +1,9 @@
 " plugin settings
-filetype off  " required!
+filetype off
 call plug#begin('~/.vim/plugged')
+
+Plug 'itchyny/lightline.vim'
+Plug 'dracula/vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -15,9 +18,6 @@ Plug 'mileszs/ack.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tyru/open-browser.vim'
 
-Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim'
-
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -28,7 +28,7 @@ Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 call plug#end()
-filetype plugin indent on  " required!
+filetype plugin indent on
 
 "--------------------
 " basic settings
@@ -38,14 +38,13 @@ set autoindent
 set autoread
 set noswapfile
 set backspace=indent,eol,start
+set clipboard=unnamed
+set mouse=a
 
 " search
 set hlsearch
 set incsearch
 set ignorecase
-
-" clipboard
-set clipboard=unnamed
 
 " trailing space
 set list
