@@ -114,12 +114,11 @@ let g:go_highlight_build_constraints = 1
 autocmd FileType go nmap gd <Plug>(go-def)
 autocmd FileType go nmap gx <Plug>(go-def-split)
 autocmd FileType go nmap gv <Plug>(go-def-vertical)
-autocmd FileType go nmap <silent>gD :GoDescribe<CR>
-autocmd FileType go nmap <silent>K  :GoDoc<CR>
 autocmd FileType go nmap <silent>ga :GoAlternate<CR>
-autocmd FileType go nmap <silent>gi :GoImplements<CR>
-autocmd FileType go nmap <silent>gr :GoReferrers<CR>
-autocmd FileType go nmap <silent>gR :GoRename<CR>
+autocmd FileType go nmap <silent>gi :GoInfo<CR>
+autocmd FileType go nmap <silent>gc :GoCallees<CR>
+autocmd FileType go nmap <silent>gr :GoRename<CR>
+autocmd FileType go nmap <silent>K  :GoDoc<CR>
 
 " python
 autocmd FileType python nmap <silent>K :ShowDoc<CR>
