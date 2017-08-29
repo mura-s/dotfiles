@@ -39,7 +39,6 @@ set autoread
 set noswapfile
 set backspace=indent,eol,start
 set clipboard=unnamed
-set mouse=a
 
 " search
 set hlsearch
