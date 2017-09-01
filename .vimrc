@@ -116,7 +116,8 @@ autocmd FileType go nmap gv <Plug>(go-def-vertical)
 autocmd FileType go nmap <silent>ga :GoAlternate<CR>
 autocmd FileType go nmap <silent>gi :GoInfo<CR>
 autocmd FileType go nmap <silent>gc :GoCallees<CR>
-autocmd FileType go nmap <silent>gr :GoRename<CR>
+autocmd FileType go nmap <silent>gr :GoReferrers<CR>
+autocmd FileType go nmap <silent>gm :GoRename<CR>
 autocmd FileType go nmap <silent>K  :GoDoc<CR>
 
 " python
