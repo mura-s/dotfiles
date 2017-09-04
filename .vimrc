@@ -88,6 +88,9 @@ vnoremap k gk
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
 
+" completion
+inoremap <C-o> <C-x><C-o>
+
 "--------------------
 " programming languages
 " c, c++
