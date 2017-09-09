@@ -38,25 +38,25 @@ set autoindent
 set autoread
 set noswapfile
 set backspace=indent,eol,start
-set clipboard=unnamed
-
-" search
 set hlsearch
 set incsearch
 set ignorecase
+set splitright
+set splitbelow
+set clipboard=unnamed
 
 " trailing space
 set list
 set listchars=tab:»\ ,trail:-
 
-" grep & quickfix window
-autocmd QuickFixCmdPost *grep* cwindow
-
-" stop auto comment out
-autocmd FileType * setlocal formatoptions-=ro
-
 " disable completion preview window
 set completeopt=menuone
+
+" grep & quickfix window
+au QuickFixCmdPost *grep* cwindow
+
+" stop auto comment out
+au FileType * setlocal formatoptions-=ro
 
 " indent
 au BufNewFile,BufRead * set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -70,8 +70,9 @@ hi SpecialKey ctermfg=8 ctermbg=none
 
 "--------------------
 " key mappings
-" clear search highlight
 nnoremap <Esc><Esc> :noh<CR>
+nnoremap <C-w>x <C-w>s
+inoremap <C-o> <C-x><C-o>
 
 " move cursor
 inoremap <C-f> <Right>
@@ -84,12 +85,6 @@ vnoremap k gk
 " delete
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
-
-" split
-nnoremap <C-w>x <C-w>s
-
-" completion
-inoremap <C-o> <C-x><C-o>
 
 "--------------------
 " programming languages
@@ -113,23 +108,23 @@ let g:go_highlight_types = 1
 let g:go_highlight_build_constraints = 1
 
 " go keymap
-autocmd FileType go nmap gd <Plug>(go-def)
-autocmd FileType go nmap gx <Plug>(go-def-split)
-autocmd FileType go nmap gv <Plug>(go-def-vertical)
-autocmd FileType go nmap <silent>ga :GoAlternate<CR>
-autocmd FileType go nmap <silent>gi :GoInfo<CR>
-autocmd FileType go nmap <silent>gc :GoCallees<CR>
-autocmd FileType go nmap <silent>gr :GoReferrers<CR>
-autocmd FileType go nmap <silent>gm :GoRename<CR>
-autocmd FileType go nmap <silent>K  :GoDoc<CR>
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap gx <Plug>(go-def-split)
+au FileType go nmap gv <Plug>(go-def-vertical)
+au FileType go nmap <silent>ga :GoAlternate<CR>
+au FileType go nmap <silent>gi :GoInfo<CR>
+au FileType go nmap <silent>gc :GoCallees<CR>
+au FileType go nmap <silent>gr :GoReferrers<CR>
+au FileType go nmap <silent>gm :GoRename<CR>
+au FileType go nmap <silent>K  :GoDoc<CR>
 
 " python
-autocmd FileType python nmap <silent>K :ShowDoc<CR>
 let g:jedi#goto_definitions_command = "gd"
+au FileType python nmap <silent>K :ShowDoc<CR>
 
 " js
-autocmd FileType javascript nmap <silent>K :TernDoc<CR>
-autocmd FileType javascript nmap <silent>gd :TernDef<CR>
+au FileType javascript nmap <silent>gd :TernDef<CR>
+au FileType javascript nmap <silent>K :TernDoc<CR>
 
 "--------------------
 " other plugins
