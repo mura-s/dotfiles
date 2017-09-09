@@ -85,6 +85,9 @@ vnoremap k gk
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
 
+" split
+nnoremap <C-w>x <C-w>s
+
 " completion
 inoremap <C-o> <C-x><C-o>
 
