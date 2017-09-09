@@ -55,9 +55,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 " stop auto comment out
 autocmd FileType * setlocal formatoptions-=ro
 
-" popup menu height
-set pumheight=15
-
 " disable completion preview window
 set completeopt=menuone
 
