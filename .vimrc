@@ -44,6 +44,7 @@ set ignorecase
 set splitright
 set splitbelow
 set clipboard=unnamed
+set laststatus=2
 
 " trailing space
 set list
@@ -131,16 +132,22 @@ au FileType javascript nmap <silent>K :TernDoc<CR>
 " ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
 let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor'
+let g:ctrlp_prompt_mappings = {
+\   'PrtCurRight()':   ['<right>'],
+\   'PrtClearCache()': ['<F5>', '<C-l>'],
+\}
 
 " NERDTree
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMapOpenSplit='<C-x>'
+let g:NERDTreeMapOpenVSplit='<C-v>'
+let g:NERDTreeMapRefreshRoot='<C-l>'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeMapOpenSplit='<C-x>'
-let NERDTreeMapOpenVSplit='<C-v>'
-let NERDTreeShowHidden = 1
 
 " tagbar
 nnoremap <silent><Leader>t :TagbarToggle<CR>
@@ -148,13 +155,13 @@ nnoremap <silent><Leader>t :TagbarToggle<CR>
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-nnoremap <silent><Leader>s :SyntasticCheck<CR>
 let g:syntastic_mode_map = {
 \  'mode': 'passive',
 \}
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers = ['eslint']
+nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
@@ -171,8 +178,6 @@ let g:ackprg = 'ag --vimgrep'
 nnoremap <silent><Leader>m :PrevimOpen<CR>
 
 " lightline.vim
-set laststatus=2
-set t_Co=256
 let g:lightline = {
 \  'colorscheme': 'Dracula',
 \  'active': {
