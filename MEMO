@@ -1,5 +1,6 @@
 - /etc/pathsで/usr/local/binを一番上に持ってきた。
 
-- El Capitanでは、/etc/zprofileを/etc/zshenvにmvした。
+- /etc/pathsに/usr/local/sbinを追加した。
 
-- El Capitanでは、/etc/pathsに/usr/local/sbinを追加した。
+- /etc/zprofileを/etc/zshenvにmvした。
+
