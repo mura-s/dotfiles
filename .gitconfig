@@ -1,31 +1,31 @@
 [core]
-	editor = vim
+  editor = vim
 [user]
-	name = Seiya Muramatsu
-	email = seiya.muramatsu1@gmail.com
+  name = Seiya Muramatsu
+  email = seiya.muramatsu1@gmail.com
 [color]
-	ui = auto
+  ui = auto
 [push]
-	default = simple
+  default = simple
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
 [ghq]
   root = ~/src
 [url "git@github.com:"]
-	pushinsteadof = https://github.com/
+  pushinsteadof = https://github.com/
 [diff]
-	tool = opendiff
+  tool = opendiff
 [merge]
-	tool = opendiff
+  tool = opendiff
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
