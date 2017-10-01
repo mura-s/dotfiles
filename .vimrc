@@ -43,7 +43,6 @@ set incsearch
 set ignorecase
 set splitright
 set splitbelow
-set cursorline
 set clipboard=unnamed
 set laststatus=2
 
