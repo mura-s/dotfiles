@@ -78,7 +78,7 @@ precmd () {
 
 ####################
 # prompt
-PROMPT="%B%F{black}%n%f %F{green}%~%f $%b "
+PROMPT="%B%F{blue}%n%f %F{green}%~%f $%b "
 RPROMPT="%B%1(v|%F{red}%1v%f|)%b"
 
 ####################

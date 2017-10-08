@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim'
+Plug 'w0ng/vim-hybrid'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -65,9 +65,8 @@ au BufNewFile,BufRead *.c,*.cpp,*.py,*.java set tabstop=4 shiftwidth=4 softtabst
 au BufNewFile,BufRead *.go,Makefile set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 " colorscheme
-color dracula
-hi Normal ctermbg=none
-hi SpecialKey ctermfg=8 ctermbg=none
+set background=dark
+color hybrid
 
 "--------------------
 " key mappings
@@ -179,7 +178,6 @@ nnoremap <silent><Leader>m :PrevimOpen<CR>
 
 " lightline.vim
 let g:lightline = {
-\  'colorscheme': 'Dracula',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
