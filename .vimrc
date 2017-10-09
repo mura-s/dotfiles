@@ -178,6 +178,7 @@ nnoremap <silent><Leader>m :PrevimOpen<CR>
 
 " lightline.vim
 let g:lightline = {
+\  'colorscheme': 'wombat',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
