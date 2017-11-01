@@ -113,14 +113,15 @@ au FileType go nmap gx <Plug>(go-def-split)
 au FileType go nmap gv <Plug>(go-def-vertical)
 au FileType go nmap <silent>ga :GoAlternate<CR>
 au FileType go nmap <silent>gi :GoInfo<CR>
-au FileType go nmap <silent>gc :GoCallees<CR>
-au FileType go nmap <silent>gr :GoReferrers<CR>
-au FileType go nmap <silent>gm :GoRename<CR>
+au FileType go nmap <silent>gu :GoReferrers<CR>
+au FileType go nmap <silent>gr :GoRename<CR>
 au FileType go nmap <silent>K  :GoDoc<CR>
 
 " python
-let g:jedi#goto_definitions_command = "gd"
-au FileType python nmap <silent>K :ShowDoc<CR>
+let g:jedi#goto_command   = "gd"
+let g:jedi#usages_command = "gu"
+let g:jedi#rename_command = "gr"
+let g:jedi#documentation_command = "K"
 
 " js
 au FileType javascript nmap <silent>gd :TernDef<CR>
