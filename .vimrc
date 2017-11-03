@@ -72,7 +72,7 @@ color hybrid
 " key mappings
 nnoremap <Esc><Esc> :noh<CR>
 nnoremap <C-w>x <C-w>s
-inoremap <C-o> <C-x><C-o><C-p>
+inoremap <C-o> <C-x><C-o>
 
 " move cursor
 inoremap <C-f> <Right>
