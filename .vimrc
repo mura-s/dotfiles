@@ -118,6 +118,7 @@ au FileType go nmap <silent>gr :GoRename<CR>
 au FileType go nmap <silent>K  :GoDoc<CR>
 
 " python
+let g:jedi#popup_on_dot = 0
 let g:jedi#goto_command   = "gd"
 let g:jedi#usages_command = "gu"
 let g:jedi#rename_command = "gr"
