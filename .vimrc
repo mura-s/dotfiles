@@ -136,7 +136,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
-let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor'
+let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor\|lib'
 let g:ctrlp_prompt_mappings = {
 \   'PrtCurRight()':   ['<right>'],
 \   'PrtClearCache()': ['<F5>', '<C-l>'],
