@@ -74,7 +74,7 @@ nnoremap <Esc><Esc> :noh<CR>
 nnoremap <C-w>x <C-w>s
 inoremap <C-o> <C-x><C-o>
 
-" move cursor
+" move
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 nnoremap j gj
