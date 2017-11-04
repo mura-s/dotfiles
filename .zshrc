@@ -160,7 +160,7 @@ fi
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
-alias h='history -15'
+alias h='history'
 
 alias ls='ls -FG'
 alias ll='ls -lFG'
