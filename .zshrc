@@ -1,4 +1,3 @@
-####################
 # basic settings
 # use color
 autoload -Uz colors
@@ -47,7 +46,7 @@ setopt auto_menu
 # use glob
 setopt extended_glob
 
-####################
+#--------------------
 # completion settings
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
@@ -62,7 +61,7 @@ bindkey "^[[Z" reverse-menu-complete
 # ignore case
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-####################
+#--------------------
 # cdr
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -75,7 +74,7 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
   zstyle ':chpwd:*' recent-dirs-pushd true
 fi
 
-####################
+#--------------------
 # vcs_info
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -89,12 +88,12 @@ precmd () {
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-####################
+#--------------------
 # prompt
 PROMPT="%B%F{blue}%n%f %F{green}%~%f $%b "
 RPROMPT="%B%1(v|%F{red}%1v%f|)%b"
 
-####################
+#--------------------
 # environment variables
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -141,7 +140,7 @@ export LC_ALL=ja_JP.UTF-8
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
 
-####################
+#--------------------
 # alias
 alias mv='mv -i'
 alias cp='cp -i'
@@ -153,7 +152,7 @@ alias ll='ls -lFG'
 alias la='ls -AFG'
 alias lla='ls -lAFG'
 
-####################
+#--------------------
 # peco
 function exists { which $1 &> /dev/null }
 
@@ -214,7 +213,7 @@ if exists peco; then
   bindkey '^]' peco-ghq
 fi
 
-####################
+#--------------------
 # tmux auto start
 if [ -z "$TMUX" -a -z "$STY" ]; then
   if type tmux >/dev/null 2>&1; then
@@ -225,4 +224,3 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
     fi
   fi
 fi
-
