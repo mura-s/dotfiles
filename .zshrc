@@ -63,6 +63,19 @@ bindkey "^[[Z" reverse-menu-complete
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ####################
+# cdr
+if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle ':completion:*:*:cdr:*:*' menu selection
+  zstyle ':completion:*' recent-dirs-insert both
+  zstyle ':chpwd:*' recent-dirs-max 500
+  zstyle ':chpwd:*' recent-dirs-default true
+  zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/shell/chpwd-recent-dirs"
+  zstyle ':chpwd:*' recent-dirs-pushd true
+fi
+
+####################
 # vcs_info
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -82,17 +95,63 @@ PROMPT="%B%F{blue}%n%f %F{green}%~%f $%b "
 RPROMPT="%B%1(v|%F{red}%1v%f|)%b"
 
 ####################
-# cdr
-if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-  add-zsh-hook chpwd chpwd_recent_dirs
-  zstyle ':completion:*:*:cdr:*:*' menu selection
-  zstyle ':completion:*' recent-dirs-insert both
-  zstyle ':chpwd:*' recent-dirs-max 500
-  zstyle ':chpwd:*' recent-dirs-default true
-  zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/shell/chpwd-recent-dirs"
-  zstyle ':chpwd:*' recent-dirs-pushd true
-fi
+# environment variables
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init - --no-rehash)"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - --no-rehash)"
+
+# node
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# go
+export GOPATH=$HOME
+
+# go tools PATH
+export PATH="$GOPATH/bin:$PATH"
+
+# Google Cloud
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+export CLOUDSDK_PYTHON=/usr/bin/python2.7
+
+# hub alias
+eval "$(hub alias -s)"
+
+# delete duplicated PATH for tmux
+typeset -U path
+
+# editor
+export EDITOR=vi
+
+# LANG
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+
+####################
+# alias
+alias mv='mv -i'
+alias cp='cp -i'
+alias grep='grep --color'
+alias h='history'
+
+alias ls='ls -FG'
+alias ll='ls -lFG'
+alias la='ls -AFG'
+alias lla='ls -lAFG'
 
 ####################
 # peco
@@ -154,18 +213,6 @@ if exists peco; then
   zle -N peco-ghq
   bindkey '^]' peco-ghq
 fi
-
-####################
-# alias
-alias mv='mv -i'
-alias cp='cp -i'
-alias grep='grep --color'
-alias h='history'
-
-alias ls='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -AFG'
-alias lla='ls -lAFG'
 
 ####################
 # tmux auto start

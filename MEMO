@@ -1,6 +1,0 @@
-- /etc/pathsで/usr/local/binを一番上に持ってきた。
-
-- /etc/pathsに/usr/local/sbinを追加した。
-
-- /etc/zprofileを/etc/zshenvにmvした。
-
