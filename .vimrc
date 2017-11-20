@@ -109,8 +109,8 @@ let g:go_highlight_build_constraints = 1
 
 " go keymap
 au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap gx <Plug>(go-def-split)
-au FileType go nmap gv <Plug>(go-def-vertical)
+au FileType go nmap g<C-x> <Plug>(go-def-split)
+au FileType go nmap g<C-v> <Plug>(go-def-vertical)
 au FileType go nmap <silent>ga :GoAlternate<CR>
 au FileType go nmap <silent>gi :GoInfo<CR>
 au FileType go nmap <silent>gu :GoReferrers<CR>
