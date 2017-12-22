@@ -1,5 +1,14 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "none"
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 0,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-f>"],
+            "after": ["<Right>"]
+        }
+    ]
 }
