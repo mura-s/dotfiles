@@ -5,6 +5,7 @@
     "explorer.confirmDelete": false,
     "window.zoomLevel": 0,
     "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": ["<C-f>"],
