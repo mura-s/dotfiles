@@ -198,7 +198,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-cdr
-  bindkey '^[' peco-cdr
+  bindkey '^]' peco-cdr
 
   # ghq
   function peco-ghq () {
@@ -210,7 +210,7 @@ if exists peco; then
     zle clear-screen
   }
   zle -N peco-ghq
-  bindkey '^]' peco-ghq
+  bindkey '^\' peco-ghq
 fi
 
 #--------------------
