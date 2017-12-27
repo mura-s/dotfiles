@@ -6,4 +6,6 @@ ms-python.python
 ms-vscode.cpptools
 msjsdiag.debugger-for-chrome
 redhat.java
+vscjava.vscode-java-debug
+vscjava.vscode-java-pack
 vscodevim.vim
