@@ -142,15 +142,17 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Hom
 
 #--------------------
 # alias
+alias ls='ls -FG'
+alias ll='ls -lFG'
+alias la='ls -AFG'
+alias lla='ls -lAFG'
+
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
 alias h='history'
 
-alias ls='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -AFG'
-alias lla='ls -lAFG'
+alias kc='kubectl'
 
 #--------------------
 # peco
