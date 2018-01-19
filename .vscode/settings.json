@@ -12,5 +12,8 @@
             "before": ["<C-f>"],
             "after": ["<Right>"]
         }
-    ]
+    ],
+    "vim.handleKeys": {
+        "<C-d>": true
+    }
 }
