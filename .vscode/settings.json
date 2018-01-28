@@ -15,5 +15,16 @@
     ],
     "vim.handleKeys": {
         "<C-d>": true
+    },
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
     }
 }
