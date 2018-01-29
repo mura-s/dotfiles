@@ -26,5 +26,6 @@
         "suppressResultsExplorerNotice": true,
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
-    }
+    },
+    "gitlens.codeLens.enabled": false
 }
