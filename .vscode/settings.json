@@ -27,5 +27,9 @@
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": false
+    }
 }
