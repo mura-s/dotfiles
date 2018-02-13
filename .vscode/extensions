@@ -10,5 +10,7 @@ redhat.java
 sjhuangx.vscode-scheme
 vscjava.vscode-java-debug
 vscjava.vscode-java-pack
+vscjava.vscode-java-test
+vscjava.vscode-maven
 vscodevim.vim
 zhuangtongfa.Material-theme
