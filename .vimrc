@@ -7,25 +7,20 @@ Plug 'w0ng/vim-hybrid'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
-Plug 'mileszs/ack.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tyru/open-browser.vim'
+Plug 'mileszs/ack.vim'
 
-Plug 'editorconfig/editorconfig-vim'
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-Plug 'kannokanno/previm', { 'for': 'markdown' }
 
 call plug#end()
 filetype plugin indent on
@@ -137,7 +132,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
-let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor\|lib'
+let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor'
 let g:ctrlp_prompt_mappings = {
 \   'PrtCurRight()':   ['<right>'],
 \   'PrtClearCache()': ['<F5>', '<C-l>'],
@@ -149,9 +144,6 @@ let g:NERDTreeMapOpenSplit='<C-x>'
 let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapRefreshRoot='<C-l>'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-" tagbar
-nnoremap <silent><Leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_enable_signs=1
@@ -174,9 +166,6 @@ let g:quickrun_config = {
 
 " ack.vim (:Ack [options] {pattern} [{directories}])
 let g:ackprg = 'ag --vimgrep'
-
-" PreVim (for markdown file)
-nnoremap <silent><Leader>m :PrevimOpen<CR>
 
 " lightline.vim
 let g:lightline = {
