@@ -3,6 +3,7 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
+    "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "window.zoomLevel": 0,
