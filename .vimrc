@@ -15,6 +15,7 @@ Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
