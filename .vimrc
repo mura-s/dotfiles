@@ -10,10 +10,12 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-quickrun'
-Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
