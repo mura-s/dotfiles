@@ -6,6 +6,7 @@ lukehoban.Go
 ms-python.python
 ms-vscode.cpptools
 msjsdiag.debugger-for-chrome
+poga.theme-hybrid-operator
 redhat.java
 sjhuangx.vscode-scheme
 vscjava.vscode-java-debug
@@ -14,4 +15,3 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscodevim.vim
 yzhang.markdown-all-in-one
-zhuangtongfa.Material-theme
