@@ -68,7 +68,7 @@ color hybrid
 
 "--------------------
 " key mappings
-nnoremap <Leader><Space> :nohl<CR>
+nnoremap <Leader>\ :nohl<CR>
 nnoremap <C-w>x <C-w>s
 inoremap <C-o> <C-x><C-o>
 

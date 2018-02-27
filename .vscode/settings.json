@@ -16,7 +16,7 @@
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
         {
-            "before": ["leader", "space"],
+            "before": ["leader", "\\"],
             "after": [],
             "commands": [
                 {
