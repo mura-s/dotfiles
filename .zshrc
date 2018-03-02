@@ -75,23 +75,27 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 fi
 
 #--------------------
-# vcs_info
+# vcs_info & prompt
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "!"
-zstyle ':vcs_info:git:*' unstagedstr "+"
-zstyle ':vcs_info:*' formats '%u%c[%b]'
-zstyle ':vcs_info:*' actionformats '%u%c[%b|%a]'
-precmd () {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
+zstyle ':vcs_info:git:*' unstagedstr "!"
+zstyle ':vcs_info:git:*' stagedstr "+"
+zstyle ':vcs_info:*' formats "[%b]%u%c"
+zstyle ':vcs_info:*' actionformats "[%b|%a]%u%c"
 
-#--------------------
-# prompt
-PROMPT="%B%F{blue}%n%f %F{green}%~%f $%b "
-RPROMPT="%B%1(v|%F{red}%1v%f|)%b"
+precmd () {
+  LANG=en_US.UTF-8 vcs_info
+  vcs_msg="$vcs_info_msg_0_"
+  git_prompt=""
+
+  if [[ -n $(echo "$vcs_msg" | grep '[!+]') ]]; then
+    git_prompt="%F{red}$vcs_msg%f "
+  elif [[ -n "$vcs_msg" ]]; then
+    git_prompt="%F{green}$vcs_msg%f "
+  fi
+
+  PROMPT="%B%F{blue}%~%f $git_prompt$%b "
+}
 
 #--------------------
 # environment variables
