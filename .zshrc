@@ -31,9 +31,6 @@ setopt no_flow_control
 # no Ctrl-D logout
 setopt IGNOREEOF
 
-# correct wrong command
-setopt correct
-
 # allow comments
 setopt interactive_comments
 
