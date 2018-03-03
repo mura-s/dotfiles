@@ -119,7 +119,6 @@ export PATH="$GOPATH/bin:$PATH"
 # Google Cloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
@@ -162,14 +161,8 @@ function exists { which $1 &> /dev/null }
 if exists peco; then
   # select history
   function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-      tac="tac"
-    else
-      tac="tail -r"
-    fi
     BUFFER=$(history -n 1 | \
-      eval $tac | \
+      tail -r | \
       peco --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
