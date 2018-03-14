@@ -81,18 +81,12 @@ zstyle ':vcs_info:*' formats "(%b)%u%c"
 zstyle ':vcs_info:*' actionformats "(%b|%a)%u%c"
 
 precmd () {
+  psvar=()
   LANG=en_US.UTF-8 vcs_info
-  vcs_msg="$vcs_info_msg_0_"
-  git_prompt=""
-
-  if [[ -n $(echo "$vcs_msg" | grep '[!+]') ]]; then
-    git_prompt="%F{red}$vcs_msg%f "
-  elif [[ -n "$vcs_msg" ]]; then
-    git_prompt="%F{green}$vcs_msg%f "
-  fi
-
-  PROMPT="%B%F{blue}%~%f $git_prompt$%b "
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+
+PROMPT="%B%F{blue}%~%f %1(v|%F{green}%1v %f|)$%b "
 
 #--------------------
 # environment variables
