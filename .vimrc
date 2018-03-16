@@ -107,8 +107,6 @@ let g:go_highlight_build_constraints = 1
 
 " go keymap
 au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap g<C-x> <Plug>(go-def-split)
-au FileType go nmap g<C-v> <Plug>(go-def-vertical)
 au FileType go nmap <silent>ga :GoAlternate<CR>
 au FileType go nmap <silent>gi :GoInfo<CR>
 au FileType go nmap <silent>gu :GoReferrers<CR>
@@ -129,7 +127,7 @@ au FileType javascript nmap <silent>K :TernDoc<CR>
 "--------------------
 " other plugins
 " ctrlp
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = ''
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 1
