@@ -2,6 +2,7 @@
 {
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
+    "editor.formatOnSave": true,
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
@@ -10,13 +11,20 @@
     "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": ["<C-f>"],
-            "after": ["<Right>"]
+            "before": [
+                "<C-f>"
+            ],
+            "after": [
+                "<Right>"
+            ]
         }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
         {
-            "before": ["leader", "\\"],
+            "before": [
+                "leader",
+                "\\"
+            ],
             "after": [],
             "commands": [
                 {
