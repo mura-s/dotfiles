@@ -96,7 +96,6 @@ let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
 " golang
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = "quickfix"
-let g:go_info_mode = "guru"
 let g:go_gocode_unimported_packages = 1
 
 " go highlight
