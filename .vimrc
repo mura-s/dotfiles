@@ -48,13 +48,6 @@ set laststatus=2
 set list
 set listchars=tab:»\ ,trail:-
 
-" eliminate delay when switching to normal mode
-set ttimeoutlen=50
-
-" change cursor shape in insert mode
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 " disable completion preview window
 set completeopt=menuone
 
