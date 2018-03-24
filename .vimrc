@@ -1,4 +1,4 @@
-" plugin settings
+" plugins
 filetype off
 call plug#begin('~/.vim/plugged')
 
@@ -47,6 +47,9 @@ set laststatus=2
 " trailing space
 set list
 set listchars=tab:»\ ,trail:-
+
+" eliminate delay when switching to normal mode
+set ttimeoutlen=50
 
 " change cursor shape in insert mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
