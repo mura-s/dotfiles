@@ -4,6 +4,7 @@
     "workbench.editor.enablePreview": false,
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "boundary",
+    "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "window.zoomLevel": 0,
