@@ -10,6 +10,7 @@
     "window.zoomLevel": 0,
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
