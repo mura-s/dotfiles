@@ -2,7 +2,7 @@ PeterJausovec.vscode-docker
 dbaeumer.vscode-eslint
 eamodio.gitlens
 formulahendry.code-runner
-lukehoban.Go
+ms-vscode.Go
 ms-python.python
 ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
@@ -15,3 +15,4 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscodevim.vim
 yzhang.markdown-all-in-one
+zhuangtongfa.Material-theme
