@@ -2,10 +2,9 @@ PeterJausovec.vscode-docker
 dbaeumer.vscode-eslint
 eamodio.gitlens
 formulahendry.code-runner
-ms-vscode.Go
 ms-python.python
 ms-vscode.cpptools
-ms-vsliveshare.vsliveshare
+ms-vscode.Go
 msjsdiag.debugger-for-chrome
 redhat.java
 sjhuangx.vscode-scheme
