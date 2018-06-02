@@ -185,7 +185,7 @@ bindkey '^\' peco-ghq
 
 #--------------------
 # tmux auto start
-if [[ -z $TMUX ]]; then
+if [[ -z "$TMUX" && -z "$VSCODE_PID" ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
     tmux new-session
