@@ -100,9 +100,9 @@ let g:go_list_type = "quickfix"
 let g:go_gocode_unimported_packages = 1
 
 " go highlight
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_build_constraints = 1
 
 " go keymap
