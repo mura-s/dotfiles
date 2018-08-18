@@ -120,20 +120,24 @@ typeset -U path
 
 #--------------------
 # alias
-alias ls='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -AFG'
-alias lla='ls -lAFG'
+case ${OSTYPE} in
+  darwin*)
+    alias ls='ls -FG'
+    alias tac='tail -r'
+    ;;
+  linux*)
+    alias ls='ls -F --color'
+    ;;
+esac
+
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
 alias h='history'
 alias kc='kubectl'
-
-case ${OSTYPE} in
-  darwin*)
-    alias tac='tail -r'
-esac
 
 #--------------------
 # peco
