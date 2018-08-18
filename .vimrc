@@ -45,6 +45,11 @@ set splitbelow
 set clipboard=unnamed
 set laststatus=2
 
+" encodings
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+
 " trailing space
 set list
 set listchars=tab:»\ ,trail:-
