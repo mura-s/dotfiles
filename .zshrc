@@ -78,7 +78,7 @@ precmd () {
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-PROMPT="%B%F{blue}%~%f %1(v|%F{green}%1v %f|)$%b "
+PROMPT="%B%F{green}%~%f %1(v|%F{blue}%1v %f|)$%b "
 
 #--------------------
 # environment variables
@@ -192,7 +192,7 @@ bindkey '^\' peco-ghq
 
 #--------------------
 # tmux auto start
-if [[ -z "$TMUX" && -z "$VSCODE_PID" ]]; then
+if [[ -z "$TMUX" && "$TERM_PROGRAM" != "vscode" ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
     tmux new-session
