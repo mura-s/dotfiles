@@ -124,20 +124,23 @@ alias ls='ls -FG'
 alias ll='ls -lFG'
 alias la='ls -AFG'
 alias lla='ls -lAFG'
-
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
 alias h='history'
-
 alias kc='kubectl'
+
+case ${OSTYPE} in
+  darwin*)
+    alias tac='tail -r'
+esac
 
 #--------------------
 # peco
 # select history
 function peco-select-history() {
   BUFFER=$(history -n 1 | \
-    tail -r | \
+    tac | \
     peco --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle clear-screen
