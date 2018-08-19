@@ -175,7 +175,7 @@ let g:ackprg = 'ag --vimgrep'
 
 " lightline.vim
 let g:lightline = {
-\  'colorscheme': 'default',
+\  'colorscheme': 'wombat',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
