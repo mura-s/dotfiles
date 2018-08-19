@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'w0ng/vim-hybrid'
+Plug 'sjl/badwolf'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -70,7 +70,7 @@ au BufNewFile,BufRead *.go,*.mk,Makefile set tabstop=4 shiftwidth=4 softtabstop=
 
 " colorscheme
 set background=dark
-color hybrid
+color badwolf
 
 "--------------------
 " key mappings
@@ -175,7 +175,7 @@ let g:ackprg = 'ag --vimgrep'
 
 " lightline.vim
 let g:lightline = {
-\  'colorscheme': 'jellybeans',
+\  'colorscheme': 'default',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
