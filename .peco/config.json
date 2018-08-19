@@ -2,6 +2,6 @@
   "Style": {
     "Query": ["blue"],
     "Matched": ["blue"],
-    "Selected": ["on_red", "black"]
+    "Selected": ["on_red", "white"]
   }
 }
