@@ -1,4 +1,3 @@
-PeterJausovec.vscode-docker
 dbaeumer.vscode-eslint
 eamodio.gitlens
 esbenp.prettier-vscode
@@ -7,6 +6,7 @@ ms-python.python
 ms-vscode.cpptools
 ms-vscode.Go
 msjsdiag.debugger-for-chrome
+PeterJausovec.vscode-docker
 redhat.java
 sjhuangx.vscode-scheme
 vscjava.vscode-java-debug
