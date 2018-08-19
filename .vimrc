@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'jsit/disco.vim'
+Plug 'w0ng/vim-hybrid'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -70,7 +70,7 @@ au BufNewFile,BufRead *.go,*.mk,Makefile set tabstop=4 shiftwidth=4 softtabstop=
 
 " colorscheme
 set background=dark
-color disco
+color hybrid
 
 "--------------------
 " key mappings
