@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'sjl/badwolf'
+Plug 'mura-s/badwolf', { 'branch': 'go-support' }
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -105,10 +105,11 @@ let g:go_list_type = "quickfix"
 let g:go_gocode_unimported_packages = 1
 
 " go highlight
-let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_variable_declarations = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_highlight_build_constraints = 1
 
 " go keymap
 au FileType go nmap gd <Plug>(go-def)
