@@ -106,8 +106,6 @@ let g:go_gocode_unimported_packages = 1
 
 " go highlight
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_variable_declarations = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
