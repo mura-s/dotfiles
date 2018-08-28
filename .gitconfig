@@ -15,7 +15,7 @@
 [ghq]
   root = ~/src
 [url "git@github.com:"]
-  pushinsteadof = https://github.com/
+  insteadOf = https://github.com/
 [diff]
   tool = default-difftool
 [difftool "default-difftool"]
