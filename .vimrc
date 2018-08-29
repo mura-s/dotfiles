@@ -7,6 +7,7 @@ Plug 'mura-s/badwolf', { 'branch': 'go-support' }
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -149,6 +150,9 @@ let g:NERDTreeMapOpenSplit='<C-x>'
 let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapRefreshRoot='<C-l>'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" tagbar
+nnoremap <silent><Leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_enable_signs=1
