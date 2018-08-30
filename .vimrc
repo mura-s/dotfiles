@@ -25,6 +25,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
 call plug#end()
