@@ -168,7 +168,7 @@ bindkey '^g' peco-git-recent-all-branches
 
 # cdr
 function peco-cdr () {
-  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
