@@ -12,7 +12,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'thinca/vim-quickrun'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
@@ -155,16 +155,16 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " tagbar
 nnoremap <silent><Leader>t :TagbarToggle<CR>
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = {
-\  'mode': 'passive',
+" ale
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_open_list = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {
+\  'go': ['gobuild', 'golint', 'govet'],
+\  'python': ['flake8'],
+\  'javascript': ['eslint'],
 \}
-let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['eslint']
-nnoremap <silent><Leader>s :SyntasticCheck<CR>
 
 " quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
@@ -174,10 +174,10 @@ let g:quickrun_config = {
 \  }
 \}
 
-" ack.vim (:Ack [options] {pattern} [{directories}])
+" ack (:Ack [options] {pattern} [{directories}])
 let g:ackprg = 'ag --vimgrep'
 
-" lightline.vim
+" lightline
 let g:lightline = {
 \  'colorscheme': 'default',
 \  'active': {

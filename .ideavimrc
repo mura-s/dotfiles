@@ -4,7 +4,7 @@ set incsearch
 set ignorecase
 
 " keymap
-nnoremap <Esc><Esc> :noh<CR>
+nnoremap <Leader>\ :nohl<CR>
 
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
