@@ -140,55 +140,55 @@ alias h='history'
 alias kc='kubectl'
 
 #--------------------
-# peco
+# fzf
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+
 # select history
-function peco-select-history() {
-  BUFFER=$(history -n 1 | \
-    tac | \
-    peco --query "$LBUFFER")
+function fzf-select-history() {
+  BUFFER=$(history -n 1 | tac | fzf -q "${LBUFFER}")
   CURSOR=$#BUFFER
-  zle clear-screen
+  zle reset-prompt
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
 
 # git branch
-function peco-git-recent-all-branches () {
-  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
+function fzf-git-recent-branches () {
+  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
     perl -pne 's{^refs/(heads/)?}{}' | \
-    peco --query "$LBUFFER")
+    fzf -q "${LBUFFER}")
   if [ -n "$selected_branch" ]; then
     BUFFER="git checkout ${selected_branch}"
     zle accept-line
   fi
-  zle clear-screen
+  zle reset-prompt
 }
-zle -N peco-git-recent-all-branches
-bindkey '^g' peco-git-recent-all-branches
+zle -N fzf-git-recent-branches
+bindkey '^g' fzf-git-recent-branches
 
 # cdr
-function peco-cdr () {
-  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco --query "$LBUFFER")
+function fzf-cdr () {
+  local selected_dir=$(cdr -l | awk '{ print $2 }' | fzf -q "${LBUFFER}")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
-  zle clear-screen
+  zle reset-prompt
 }
-zle -N peco-cdr
-bindkey '^]' peco-cdr
+zle -N fzf-cdr
+bindkey '^]' fzf-cdr
 
 # ghq
-function peco-ghq () {
-  local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+function fzf-ghq () {
+  local selected_dir=$(ghq list --full-path | fzf -q "${LBUFFER}")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
-  zle clear-screen
+  zle reset-prompt
 }
-zle -N peco-ghq
-bindkey '^\' peco-ghq
+zle -N fzf-ghq
+bindkey '^\' fzf-ghq
 
 #--------------------
 # tmux auto start
@@ -199,7 +199,7 @@ if [[ -z "$TMUX" && "$TERM_PROGRAM" != "vscode" ]]; then
   else
     create_new_session="Create New Session"
     ID="$ID\n${create_new_session}:"
-    ID="`echo $ID | peco | cut -d: -f1`"
+    ID="`echo $ID | fzf | cut -d: -f1`"
     if [[ "$ID" = "${create_new_session}" ]]; then
       tmux new-session
     elif [[ -n "$ID" ]]; then
