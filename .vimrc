@@ -114,11 +114,11 @@ let g:go_highlight_function_calls = 1
 
 " go keymap
 au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <silent>ga :GoAlternate<CR>
-au FileType go nmap <silent>gi :GoInfo<CR>
-au FileType go nmap <silent>gu :GoReferrers<CR>
-au FileType go nmap <silent>gr :GoRename<CR>
-au FileType go nmap <silent>K  :GoDoc<CR>
+au FileType go nmap ga <Plug>(go-alternate-edit)
+au FileType go nmap gi <Plug>(go-info)
+au FileType go nmap gu <Plug>(go-referrers)
+au FileType go nmap gr <Plug>(go-rename)
+au FileType go nmap K <Plug>(go-doc)
 
 " python
 let g:jedi#popup_on_dot = 0
