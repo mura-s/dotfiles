@@ -168,7 +168,7 @@ let g:quickrun_config = {
 \}
 
 " ack (:Ack [options] {pattern} [{directories}])
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 
 " lightline
 let g:lightline = {
