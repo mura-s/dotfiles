@@ -135,6 +135,7 @@ au FileType javascript nmap <silent>K :TernDoc<CR>
 " other plugins
 " fzf
 nnoremap <silent><C-p> :Files<CR>
+nnoremap <silent><Leader>f :Files<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>m :History<CR>
 
