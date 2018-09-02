@@ -5,7 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'mura-s/badwolf', { 'branch': 'go-support' }
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 
@@ -17,16 +18,16 @@ Plug 'thinca/vim-quickrun'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
 Plug 'thinca/vim-visualstar'
+Plug 'jiangmiao/auto-pairs'
 
-Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
+Plug 'justmao945/vim-clang',       { 'for': ['c', 'cpp'] }
+Plug 'fatih/vim-go',               { 'for': 'go' }
+Plug 'davidhalter/jedi-vim',       { 'for': 'python' }
+Plug 'pangloss/vim-javascript',    { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim',        { 'do': 'npm install', 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'stephpy/vim-yaml',           { 'for': 'yaml' }
 
 call plug#end()
 filetype plugin indent on
@@ -132,18 +133,10 @@ au FileType javascript nmap <silent>K :TernDoc<CR>
 
 "--------------------
 " other plugins
-" ctrlp
-let g:ctrlp_working_path_mode = ''
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_mruf_max = 500
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
-let g:ctrlp_custom_ignore = '\.DS_Store\|\.idea\|\.git\|node_modules\|target\|vendor'
-let g:ctrlp_prompt_mappings = {
-\   'PrtCurRight()':   ['<right>'],
-\   'PrtClearCache()': ['<F5>', '<C-l>'],
-\}
+" fzf
+nnoremap <silent><C-p> :Files<CR>
+nnoremap <silent><Leader>b :Buffers<CR>
+nnoremap <silent><Leader>m :History<CR>
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
