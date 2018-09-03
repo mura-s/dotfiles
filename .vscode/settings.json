@@ -1,62 +1,51 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.startupEditor": "none",
-    "workbench.editor.enablePreview": false,
-    "editor.formatOnSave": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.cursorBlinking": "solid",
-    "editor.minimap.enabled": false,
-    "explorer.confirmDelete": false,
-    "window.zoomLevel": 0,
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.visualstar": true,
-    "vim.insertModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<C-f>"
-            ],
-            "after": [
-                "<Right>"
-            ]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "leader",
-                "\\"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": ":nohl"
-                }
-            ]
-        }
-    ],
-    "vim.handleKeys": {
-        "<C-d>": true
-    },
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": true,
-        "suppressShowKeyBindingsNotice": true,
-        "suppressUpdateNotice": false,
-        "suppressWelcomeNotice": true
-    },
-    "gitlens.historyExplorer.enabled": true,
-    "gitlens.codeLens.enabled": false,
-    "go.enableCodeLens": {
-        "references": false,
-        "runtest": false
-    },
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "yapf"
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-f>"],
+      "after": ["<Right>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "\\"],
+      "after": [],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-d>": true
+  },
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": true,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressUpdateNotice": false,
+    "suppressWelcomeNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.codeLens.enabled": false,
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": false
+  },
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "yapf"
 }
