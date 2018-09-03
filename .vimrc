@@ -93,6 +93,10 @@ vnoremap k gk
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
 
+" command
+command! W w
+command! Q q
+
 "--------------------
 " programming languages
 " c, c++
