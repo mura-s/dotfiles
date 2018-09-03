@@ -142,7 +142,7 @@ alias kc='kubectl'
 #--------------------
 # fzf
 export FZF_DEFAULT_COMMAND='ag --nocolor --hidden --ignore .git -g ""'
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --no-sort'
 
 # select history
 function fzf-select-history() {
