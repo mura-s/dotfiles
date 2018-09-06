@@ -7,6 +7,7 @@
   "editor.cursorBlinking": "solid",
   "editor.minimap.enabled": false,
   "explorer.confirmDelete": false,
+  "explorer.autoReveal": false,
   "window.zoomLevel": 0,
   "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
