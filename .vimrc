@@ -159,9 +159,12 @@ let g:ale_lint_on_enter = 0
 let g:ale_open_list = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
+\  'c': ['clang', 'clangtidy'],
+\  'cpp': ['clang', 'clangtidy'],
 \  'go': ['gobuild', 'golint', 'govet'],
 \  'python': ['flake8'],
 \  'javascript': ['eslint'],
+\  'typescript': ['tslint'],
 \}
 
 " quickrun (keymap: <Leader>r)
