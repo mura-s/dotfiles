@@ -1,5 +1,6 @@
 dbaeumer.vscode-eslint
 eamodio.gitlens
+eg2.tslint
 esbenp.prettier-vscode
 formulahendry.code-runner
 ms-python.python
@@ -7,6 +8,7 @@ ms-vscode.cpptools
 ms-vscode.Go
 msjsdiag.debugger-for-chrome
 PeterJausovec.vscode-docker
+PKief.material-icon-theme
 redhat.java
 sjhuangx.vscode-scheme
 vscjava.vscode-java-debug
@@ -15,4 +17,3 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscodevim.vim
 wayou.vscode-todo-highlight
-zhuangtongfa.Material-theme

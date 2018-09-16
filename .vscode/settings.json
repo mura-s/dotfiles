@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "editor.formatOnSave": true,
