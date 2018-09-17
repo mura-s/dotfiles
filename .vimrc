@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'mura-s/badwolf', { 'branch': 'go-support' }
+Plug 'tomasr/molokai'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -73,7 +73,9 @@ au BufNewFile,BufRead *.go,*.mk,Makefile set tabstop=4 shiftwidth=4 softtabstop=
 
 " colorscheme
 set background=dark
-color badwolf
+let g:molokai_original = 1
+let g:rehash256 = 1
+color molokai
 
 "--------------------
 " key mappings
