@@ -25,7 +25,6 @@ Plug 'justmao945/vim-clang',       { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go',               { 'for': 'go' }
 Plug 'davidhalter/jedi-vim',       { 'for': 'python' }
 Plug 'pangloss/vim-javascript',    { 'for': 'javascript' }
-Plug 'ternjs/tern_for_vim',        { 'do': 'npm install', 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'stephpy/vim-yaml',           { 'for': 'yaml' }
 
@@ -133,10 +132,6 @@ let g:jedi#goto_command   = "gd"
 let g:jedi#usages_command = "gu"
 let g:jedi#rename_command = "gr"
 let g:jedi#documentation_command = "K"
-
-" js
-au FileType javascript nmap <silent>gd :TernDef<CR>
-au FileType javascript nmap <silent>K :TernDoc<CR>
 
 "--------------------
 " other plugins
