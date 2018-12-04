@@ -42,7 +42,8 @@
     "suppressUpdateNotice": false,
     "suppressWelcomeNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
   "gitlens.codeLens.enabled": false,
   "go.enableCodeLens": {
     "references": false,
