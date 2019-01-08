@@ -3,6 +3,7 @@ eamodio.gitlens
 eg2.tslint
 esbenp.prettier-vscode
 formulahendry.code-runner
+GitHub.vscode-pull-request-github
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-vscode.cpptools
