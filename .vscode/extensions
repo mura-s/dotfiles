@@ -3,6 +3,7 @@ eamodio.gitlens
 eg2.tslint
 esbenp.prettier-vscode
 formulahendry.code-runner
+ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-vscode.cpptools
 ms-vscode.Go
@@ -10,8 +11,10 @@ msjsdiag.debugger-for-chrome
 PeterJausovec.vscode-docker
 PKief.material-icon-theme
 redhat.java
+redhat.vscode-yaml
 sjhuangx.vscode-scheme
 vscjava.vscode-java-debug
+vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
