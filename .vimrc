@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'thinca/vim-visualstar'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'justmao945/vim-clang',       { 'for': ['c', 'cpp'] }
 Plug 'fatih/vim-go',               { 'for': 'go' }
 Plug 'davidhalter/jedi-vim',       { 'for': 'python' }
