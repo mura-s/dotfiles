@@ -8,26 +8,19 @@ Plug 'tomasr/molokai'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'w0rp/ale'
-Plug 'thinca/vim-quickrun'
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'thinca/vim-visualstar'
 Plug 'jiangmiao/auto-pairs'
+Plug 'mileszs/ack.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'thinca/vim-visualstar'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 Plug 'editorconfig/editorconfig-vim'
-Plug 'justmao945/vim-clang',       { 'for': ['c', 'cpp'] }
-Plug 'fatih/vim-go',               { 'for': 'go' }
-Plug 'davidhalter/jedi-vim',       { 'for': 'python' }
-Plug 'pangloss/vim-javascript',    { 'for': 'javascript' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'stephpy/vim-yaml',           { 'for': 'yaml' }
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
 call plug#end()
 filetype plugin indent on
@@ -57,13 +50,13 @@ set fileencoding=utf-8
 set list
 set listchars=tab:»\ ,trail:-
 
+" output grep results to quickfix window
+au QuickFixCmdPost *grep* cwindow
+
 " disable completion preview window
 set completeopt=menuone
 
-" grep & quickfix window
-au QuickFixCmdPost *grep* cwindow
-
-" stop auto comment out
+" disable auto comment out
 au FileType * setlocal formatoptions-=ro
 
 " indent
@@ -100,45 +93,9 @@ command! W w
 command! Q q
 
 "--------------------
-" programming languages
-" c, c++
-let g:clang_auto = 0
-let g:clang_c_completeopt = 'menuone'
-let g:clang_cpp_completeopt = 'menuone'
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
-
-" golang
-let g:go_fmt_command = 'goimports'
-let g:go_list_type = "quickfix"
-let g:go_gocode_unimported_packages = 1
-
-" go highlight
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-
-" go keymap
-au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap ga <Plug>(go-alternate-edit)
-au FileType go nmap gi <Plug>(go-info)
-au FileType go nmap gu <Plug>(go-referrers)
-au FileType go nmap gr <Plug>(go-rename)
-au FileType go nmap K <Plug>(go-doc)
-
-" python
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_command   = "gd"
-let g:jedi#usages_command = "gu"
-let g:jedi#rename_command = "gr"
-let g:jedi#documentation_command = "K"
-
-"--------------------
-" other plugins
+" plugin settings
 " fzf
 nnoremap <silent><C-p> :Files<CR>
-nnoremap <silent><Leader>f :Files<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>m :History<CR>
 
@@ -149,33 +106,16 @@ let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapRefreshRoot='<C-l>'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-" tagbar
-nnoremap <silent><Leader>t :TagbarToggle<CR>
-
-" ale
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_open_list = 1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {
-\  'c': ['clang', 'clangtidy'],
-\  'cpp': ['clang', 'clangtidy'],
-\  'go': ['gobuild', 'golint', 'govet'],
-\  'python': ['flake8'],
-\  'javascript': ['eslint'],
-\  'typescript': ['tslint'],
-\}
+" ack (:Ack [options] <pattern> [directories])
+let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 
 " quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
-\  "_" : {
-\    "outputter/buffer/split" : "15sp",
-\    "outputter/buffer/into" : 1,
+\  "_": {
+\    "outputter/buffer/split": "15sp",
+\    "outputter/buffer/into": 1,
 \  }
 \}
-
-" ack (:Ack [options] {pattern} [{directories}])
-let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 
 " lightline
 let g:lightline = {
