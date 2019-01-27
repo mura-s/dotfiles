@@ -3,7 +3,7 @@ autoload -Uz colors
 colors
 bindkey -e
 
-# no beep, flow control (Ctrl-S), logout (Ctrl-D)
+# no beep, no flow control (Ctrl-S), no logout (Ctrl-D)
 setopt no_beep
 setopt no_flow_control
 setopt IGNOREEOF
@@ -39,8 +39,7 @@ setopt hist_reduce_blanks
 #--------------------
 # completion settings
 fpath=(/usr/local/share/zsh-completions $fpath)
-autoload -Uz compinit
-compinit -C
+autoload -Uz compinit && compinit
 
 # highlight
 zstyle ':completion:*:default' menu select
@@ -158,7 +157,7 @@ function fzf-git-recent-branches () {
   local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
     perl -pne 's{^refs/(heads/)?}{}' | \
     fzf -q "${LBUFFER}")
-  if [ -n "$selected_branch" ]; then
+  if [ -n "${selected_branch}" ]; then
     BUFFER="git checkout ${selected_branch}"
     zle accept-line
   fi
@@ -170,7 +169,7 @@ bindkey '^g' fzf-git-recent-branches
 # cdr
 function fzf-cdr () {
   local selected_dir=$(cdr -l | awk '{ print $2 }' | fzf -q "${LBUFFER}")
-  if [ -n "$selected_dir" ]; then
+  if [ -n "${selected_dir}" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
@@ -182,7 +181,7 @@ bindkey '^]' fzf-cdr
 # ghq
 function fzf-ghq () {
   local selected_dir=$(ghq list --full-path | fzf -q "${LBUFFER}")
-  if [ -n "$selected_dir" ]; then
+  if [ -n "${selected_dir}" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
