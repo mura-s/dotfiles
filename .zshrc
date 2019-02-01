@@ -104,6 +104,9 @@ export PATH="$GOPATH/bin:$PATH"
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
 
+# llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # Google Cloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
