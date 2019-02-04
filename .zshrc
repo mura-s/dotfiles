@@ -102,7 +102,7 @@ export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
 
 # llvm
 export PATH="/usr/local/opt/llvm/bin:$PATH"
