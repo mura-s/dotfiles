@@ -22,8 +22,7 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["leader", "\\"],
-      "after": [],
+      "before": ["<leader>", "\\"],
       "commands": [":nohl"]
     }
   ],
