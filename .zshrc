@@ -114,6 +114,9 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 export CLOUDSDK_PYTHON=/usr/bin/python2.7
 
+# Bazel
+export BAZEL_PYTHON=python2.7
+
 # hub alias
 eval "$(hub alias -s)"
 
