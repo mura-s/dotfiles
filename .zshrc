@@ -41,6 +41,11 @@ setopt hist_reduce_blanks
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
+# kubectl
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
 # highlight
 zstyle ':completion:*:default' menu select
 
