@@ -71,11 +71,19 @@ fi
 #--------------------
 # vcs_info & prompt
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats "(%b)%u%c%m"
+zstyle ':vcs_info:*' actionformats "(%b|%a)%u%c%m"
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr "!"
 zstyle ':vcs_info:git:*' stagedstr "+"
-zstyle ':vcs_info:*' formats "(%b)%u%c"
-zstyle ':vcs_info:*' actionformats "(%b|%a)%u%c"
+# untracked "?"
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+    git status --porcelain | grep -m 1 '^??' &> /dev/null ; then
+    hook_com[misc]='?'
+  fi
+}
 precmd () {
   psvar=()
   LANG=en_US.UTF-8 vcs_info
