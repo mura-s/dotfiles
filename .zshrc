@@ -37,25 +37,6 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 
 #--------------------
-# completion settings
-fpath=(/usr/local/share/zsh-completions $fpath)
-autoload -Uz compinit && compinit
-
-# kubectl
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
-
-# highlight
-zstyle ':completion:*:default' menu select
-
-# ignore case
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# reverse traverse (keymap: Shift-Tab)
-bindkey "^[[Z" reverse-menu-complete
-
-#--------------------
 # cdr
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
   autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -91,6 +72,25 @@ precmd () {
 }
 
 PROMPT="%B%F{green}%~%f %1(v|%F{blue}%1v %f|)$%b "
+
+#--------------------
+# completion settings
+fpath=(/usr/local/share/zsh-completions $fpath)
+autoload -Uz compinit && compinit
+
+# kubectl
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+# highlight
+zstyle ':completion:*:default' menu select
+
+# ignore case
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# reverse traverse (keymap: Shift-Tab)
+bindkey "^[[Z" reverse-menu-complete
 
 #--------------------
 # environment variables
@@ -154,7 +154,6 @@ alias lla='ls -lA'
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
-alias h='history'
 alias kc='kubectl'
 
 #--------------------
