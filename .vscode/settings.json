@@ -9,6 +9,7 @@
   "editor.cursorBlinking": "solid",
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "explorer.confirmDelete": false,
   "explorer.autoReveal": false,
   "window.zoomLevel": 0,
