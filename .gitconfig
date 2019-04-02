@@ -16,20 +16,7 @@
 	root = ~/src
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[diff]
-	tool = default-difftool
-[difftool "default-difftool"]
-	cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
-	tool = default-mergetool
-[mergetool "default-mergetool"]
-	cmd = code --wait $MERGED
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
-	required = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
 	required = true
