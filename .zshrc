@@ -95,8 +95,8 @@ bindkey "^[[Z" reverse-menu-complete
 #--------------------
 # environment variables
 export EDITOR=vi
-export LANG=ja_JP.UTF-8
-export LC_ALL=ja_JP.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
