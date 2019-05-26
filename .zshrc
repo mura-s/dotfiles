@@ -210,7 +210,7 @@ bindkey '^\' fzf-ghq
 
 #--------------------
 # tmux auto start
-if [[ -z "$TMUX" && "$TERM_PROGRAM" != "vscode" ]]; then
+if [[ -z "$TMUX" && "$TERM_PROGRAM" != "vscode" && -z "$VSCODE_IPC_HOOK" ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
     tmux new-session
