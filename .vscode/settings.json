@@ -20,14 +20,23 @@
   "vim.visualstar": true,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-f>"],
-      "after": ["<Right>"]
+      "before": [
+        "<C-f>"
+      ],
+      "after": [
+        "<Right>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "\\"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "\\"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     }
   ],
   "vim.handleKeys": {
@@ -48,9 +57,11 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "gitlens.codeLens.enabled": false,
+  "python.jediEnabled": false,
   "go.enableCodeLens": {
     "references": false,
     "runtest": false
   },
-  "python.jediEnabled": false
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true
 }
