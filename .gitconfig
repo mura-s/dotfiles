@@ -12,6 +12,7 @@
 	ci = commit
 	st = status
 	br = branch
+	sw = switch
 [ghq]
 	root = ~/src
 [url "git@github.com:"]
