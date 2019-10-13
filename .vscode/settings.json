@@ -62,5 +62,6 @@
     "references": false,
     "runtest": false
   },
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint"
 }
