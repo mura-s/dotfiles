@@ -22,9 +22,7 @@ setopt extended_glob
 
 # delimiter
 autoload -Uz select-word-style
-select-word-style default
-zstyle ':zle:*' word-chars " /=;@:{},|"
-zstyle ':zle:*' word-style unspecified
+select-word-style bash
 
 # history
 HISTFILE=~/.zsh_history
