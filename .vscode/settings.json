@@ -59,7 +59,6 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "gitlens.codeLens.enabled": false,
-  "python.jediEnabled": false,
   "go.enableCodeLens": {
     "references": false,
     "runtest": false
@@ -68,5 +67,7 @@
   "go.useLanguageServer": true,
   "gopls": {
     "completeUnimported": true
-  }
+  },
+  "python.jediEnabled": false,
+  "clang-format.style": "google"
 }
