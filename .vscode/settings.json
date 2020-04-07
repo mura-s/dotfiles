@@ -13,6 +13,7 @@
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.codeLens": false,
   "breadcrumbs.enabled": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "vim.hlsearch": true,
@@ -56,16 +57,11 @@
   },
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "gitlens.codeLens.enabled": false,
-  "go.enableCodeLens": {
-    "references": false,
-    "runtest": false
-  },
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   "gopls": {
     "completeUnimported": true
   },
   "python.jediEnabled": false,
-  "clang-format.style": "google"
+  "clang-format.style": "google",
 }
