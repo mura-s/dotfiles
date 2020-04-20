@@ -64,4 +64,7 @@
   },
   "python.jediEnabled": false,
   "clang-format.style": "google",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 }
