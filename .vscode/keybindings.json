@@ -1,8 +1,0 @@
-// Place your key bindings in this file to overwrite the defaults
-[
-    {
-        "key": "cmd+b",
-        "command": "-markdown.extension.editing.toggleBold",
-        "when": "editorTextFocus && editorLangId == 'markdown'"
-    }
-]
