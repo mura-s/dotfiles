@@ -21,23 +21,14 @@
   "vim.visualstar": true,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-f>"
-      ],
-      "after": [
-        "<Right>"
-      ]
+      "before": ["<C-f>"],
+      "after": ["<Right>"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "\\"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<leader>", "\\"],
+      "commands": [":nohl"]
     }
   ],
   "vim.handleKeys": {
@@ -64,7 +55,10 @@
   },
   "python.jediEnabled": false,
   "clang-format.style": "google",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
+  }
 }
