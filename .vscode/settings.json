@@ -54,19 +54,8 @@
     "completeUnimported": true
   },
   "python.jediEnabled": false,
-  "java.semanticHighlighting.enabled": true,
+  "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
-  "[java]": {
-    "editor.formatOnSave": false
-  },
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "\\.java$",
-        "cmd": "google-java-format -i ${file}"
-      }
-    ]
-  },
   "clang-format.style": "google",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
