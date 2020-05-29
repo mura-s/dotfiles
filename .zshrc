@@ -113,7 +113,8 @@ export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # llvm
 export PATH="/usr/local/opt/llvm/bin:$PATH"
