@@ -4,11 +4,11 @@ eamodio.gitlens
 esbenp.prettier-vscode
 formulahendry.code-runner
 GitHub.github-vscode-theme
+golang.Go
 mauve.terraform
 ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.cpptools
-ms-vscode.Go
 msjsdiag.debugger-for-chrome
 PKief.material-icon-theme
 redhat.java
