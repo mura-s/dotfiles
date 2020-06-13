@@ -5,14 +5,16 @@
 	email = seiya.muramatsu1@gmail.com
 [color]
 	ui = auto
-[push]
-	default = simple
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
 	sw = switch
+[push]
+	default = simple
+[pull]
+	ff = only
 [ghq]
 	root = ~/src
 [url "git@github.com:"]
