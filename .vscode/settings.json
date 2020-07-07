@@ -55,6 +55,7 @@
     "completeUnimported": true
   },
   "python.jediEnabled": false,
+  "python.languageServer": "Microsoft",
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
   "clang-format.style": "google",
