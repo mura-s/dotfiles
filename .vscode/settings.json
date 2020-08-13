@@ -50,7 +50,7 @@
   "gitlens.views.lineHistory.enabled": true,
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
-  "go.useLanguageServer": true,
+  "go.useLanguageServer": false,
   "python.jediEnabled": false,
   "python.languageServer": "Microsoft",
   "java.semanticHighlighting.enabled": false,
