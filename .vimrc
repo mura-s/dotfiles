@@ -19,7 +19,6 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-Plug 'editorconfig/editorconfig-vim'
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
 call plug#end()
