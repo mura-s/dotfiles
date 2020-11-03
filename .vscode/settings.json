@@ -52,7 +52,7 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   "python.jediEnabled": false,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
   "clang-format.style": "google",
