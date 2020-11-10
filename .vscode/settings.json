@@ -51,7 +51,6 @@
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
-  "python.jediEnabled": false,
   "python.languageServer": "Pylance",
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
@@ -60,6 +59,12 @@
   },
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   // "[html]": {
   //   "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -72,8 +77,5 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
   }
 }
