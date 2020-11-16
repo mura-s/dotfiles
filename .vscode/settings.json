@@ -46,7 +46,6 @@
     "suppressUpdateNotice": false,
     "suppressWelcomeNotice": true
   },
-  "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",

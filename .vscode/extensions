@@ -1,6 +1,5 @@
 BazelBuild.vscode-bazel
 dbaeumer.vscode-eslint
-donjayamanne.githistory
 eamodio.gitlens
 esbenp.prettier-vscode
 formulahendry.code-runner
@@ -13,7 +12,6 @@ ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-vscode-remote.remote-containers
 ms-vscode.cpptools
-msjsdiag.debugger-for-chrome
 PKief.material-icon-theme
 redhat.java
 redhat.vscode-yaml
