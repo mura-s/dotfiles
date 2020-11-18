@@ -51,6 +51,7 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   "python.languageServer": "Pylance",
+  "python.showStartPage": false,
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
   "[proto3]": {
@@ -76,5 +77,5 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 }
