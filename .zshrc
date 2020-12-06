@@ -73,7 +73,11 @@ PROMPT="%B%F{green}%~%f %1(v|%F{blue}%1v %f|)$%b "
 
 #--------------------
 # completion settings
-fpath=(/usr/local/share/zsh-completions $fpath)
+if [[ $(arch) = 'arm64' ]]; then
+  fpath=(/opt/homebrew/share/zsh-completions $fpath)
+else
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 autoload -Uz compinit && compinit
 
 # kubectl
@@ -95,6 +99,9 @@ bindkey "^[[Z" reverse-menu-complete
 export EDITOR=vi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# homebrew for arm64 mac
+export PATH="/opt/homebrew/bin:$PATH"
 
 # python
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -118,7 +125,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # llvm
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+if [[ $(arch) = 'arm64' ]]; then
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+else
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
+fi
 
 # Google Cloud
 # The next line updates PATH for the Google Cloud SDK.

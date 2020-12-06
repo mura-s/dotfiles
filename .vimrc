@@ -5,19 +5,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 
-Plug '/usr/local/opt/fzf'
+if isdirectory('/opt/homebrew/opt/fzf')
+  Plug '/opt/homebrew/opt/fzf'
+elseif isdirectory('/usr/local/opt/fzf')
+  Plug '/usr/local/opt/fzf'
+endif
 Plug 'junegunn/fzf.vim'
+
 Plug 'scrooloose/nerdtree'
-
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
