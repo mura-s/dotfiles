@@ -73,7 +73,7 @@ PROMPT="%B%F{green}%~%f %1(v|%F{blue}%1v %f|)$%b "
 
 #--------------------
 # completion settings
-if [[ $(arch) = 'arm64' ]]; then
+if [[ $(uname -m) = 'arm64' ]]; then
   fpath=(/opt/homebrew/share/zsh-completions $fpath)
 else
   fpath=(/usr/local/share/zsh-completions $fpath)
@@ -125,7 +125,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # llvm
-if [[ $(arch) = 'arm64' ]]; then
+if [[ $(uname -m) = 'arm64' ]]; then
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 else
   export PATH="/usr/local/opt/llvm/bin:$PATH"
