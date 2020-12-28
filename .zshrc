@@ -103,22 +103,22 @@ export LC_ALL=en_US.UTF-8
 # homebrew for arm64 mac
 export PATH="/opt/homebrew/bin:$PATH"
 
-# python
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init - --no-rehash)"
-
-# node
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-
 # go
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
+# python
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init - --no-rehash)"
+
 # java
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# node
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 
 # llvm
 if [[ $(uname -m) = 'arm64' ]]; then
