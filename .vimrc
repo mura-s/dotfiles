@@ -14,7 +14,6 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-commentary'
@@ -107,9 +106,6 @@ let g:NERDTreeMapOpenSplit='<C-x>'
 let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapRefreshRoot='<C-l>'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-" ack (:Ack [options] <pattern> [directories])
-let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 
 " quickrun (keymap: <Leader>r)
 let g:quickrun_config = {
