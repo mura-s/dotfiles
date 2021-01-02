@@ -121,13 +121,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" --no-use
 
-# llvm
-if [[ $(uname -m) = 'arm64' ]]; then
-  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-else
-  export PATH="/usr/local/opt/llvm/bin:$PATH"
-fi
-
 # Google Cloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
