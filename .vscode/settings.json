@@ -51,6 +51,8 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   "python.languageServer": "Pylance",
+  "python.linting.pylintEnabled": true,
+  "python.testing.unittestEnabled": true,
   "python.showStartPage": false,
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
