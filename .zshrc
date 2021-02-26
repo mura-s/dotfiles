@@ -103,9 +103,8 @@ export LC_ALL=en_US.UTF-8
 # homebrew for arm64 mac
 export PATH="/opt/homebrew/bin:$PATH"
 
-# go
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-export GOPATH=$HOME
+# go (use go_install.sh)
+export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 
 # python
@@ -121,14 +120,9 @@ export PATH=$JAVA_HOME/bin:$PATH
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" --no-use
 
-# Google Cloud
-# The next line updates PATH for the Google Cloud SDK.
+# Google Cloud SDK
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-# The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
-# hub alias
-eval "$(hub alias -s)"
 
 # delete duplicated PATH for tmux
 typeset -U path
