@@ -4,6 +4,12 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
   "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
   "explorer.autoReveal": false,
@@ -21,32 +27,61 @@
   "vim.visualstar": true,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-f>"],
-      "after": ["<Right>"]
+      "before": [
+        "<C-f>"
+      ],
+      "after": [
+        "<Right>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "\\"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "\\"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["j"],
-      "after": ["g", "j"]
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
     {
-      "before": ["k"],
-      "after": ["g", "k"]
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["j"],
-      "after": ["g", "j"]
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
     {
-      "before": ["k"],
-      "after": ["g", "k"]
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
     }
   ],
   "vim.handleKeys": {
