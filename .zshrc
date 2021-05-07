@@ -146,6 +146,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color'
 alias kc='kubectl'
+alias kx='kubectx'
+alias kn='kubens'
 
 #--------------------
 # fzf
