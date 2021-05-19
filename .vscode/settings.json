@@ -97,6 +97,9 @@
   },
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
+  "gopls": {
+    "experimentalWorkspaceModule": true,
+  },
   "python.languageServer": "Pylance",
   "python.linting.pylintEnabled": true,
   "python.testing.unittestEnabled": true,
