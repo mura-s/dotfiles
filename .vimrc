@@ -2,16 +2,10 @@
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
-
-if isdirectory('/opt/homebrew/opt/fzf')
-  Plug '/opt/homebrew/opt/fzf'
-elseif isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf'
-endif
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'thinca/vim-quickrun'
@@ -20,7 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
 call plug#end()
