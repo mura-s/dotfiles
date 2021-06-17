@@ -109,7 +109,8 @@ export PATH="$GOPATH/bin:$PATH"
 
 # python
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init - --no-rehash)"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 # java
 export SDKMAN_DIR="$HOME/.sdkman"
