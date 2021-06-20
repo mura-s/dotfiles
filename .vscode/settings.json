@@ -5,7 +5,7 @@
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
   "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
@@ -97,10 +97,16 @@
   "gopls": {
     "experimentalWorkspaceModule": true,
   },
-  "python.languageServer": "Pylance",
-  "python.linting.pylintEnabled": true,
-  "python.testing.pytestEnabled": true,
   "python.showStartPage": false,
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.testing.pytestEnabled": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   "java.semanticHighlighting.enabled": false,
   "java.configuration.checkProjectSettingsExclusions": false,
   "[html]": {
